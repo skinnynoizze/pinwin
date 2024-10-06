@@ -29,7 +29,7 @@ const Navbar: React.CFC = ({ children }) => {
   const params = useParams()
 
   const sportSlug = params.sportSlug as string || 'top'
-  const icon: IconName = sportSlug === 'top' ? 'interface/icecream' : `sport/${sportSlug}` as IconName
+  const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
   const className = cx('border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-3 flex mb:flex-col ds:items-center justify-between ds:sticky top-0 z-20 bg-bg-l1', {
