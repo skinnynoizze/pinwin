@@ -16,8 +16,8 @@ console.debug(isDevEnabled ? 'azuro dev' : 'azuro prod')
 const walletConnectConnector = walletConnect({
   projectId,
   metadata: {
-    name: 'Azuro Betting Example',
-    description: '',
+    name: 'PinWin.xyz',
+    description: 'PinWin.xyz',
     icons: [ `${constants.baseUrl}/${iconAzuroImage.src}` ],
     url: '',
   },
@@ -25,7 +25,8 @@ const walletConnectConnector = walletConnect({
 })
 
 const wagmiConfig = createConfig({
-  chains: isDevEnabled ? [ polygonAmoy, gnosis, spicy ] : [ polygon, polygonAmoy, gnosis, chiliz, spicy ],
+  // chains: isDevEnabled ? [ polygonAmoy, gnosis, spicy ] : [ polygon, polygonAmoy, gnosis, chiliz, spicy ],
+  chains: isDevEnabled ? [ polygonAmoy, gnosis, spicy ] : [ polygon ],
   transports: {
     [polygon.id]: http(constants.rpcByChains[polygon.id]),
     [polygonAmoy.id]: http(constants.rpcByChains[polygonAmoy.id]),

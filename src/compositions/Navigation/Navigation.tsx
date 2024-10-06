@@ -77,7 +77,7 @@ const Sport: React.FC<SportProps> = (props) => {
   const iconClassName = cx('h-4 w-4', {
     'rotate-180': isActive,
   })
-  const icon: IconName = isTop || isUnique ? 'interface/top' : `sport/${slug}` as IconName
+  const icon: IconName = isTop || isUnique ? 'interface/icecream' : `sport/${slug}` as IconName
 
   const leagues = useMemo(() => {
     if (!countries) {

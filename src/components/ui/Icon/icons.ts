@@ -55,10 +55,30 @@ import _interface_expand from '../../../../public/images/icons/interface/expand.
 import _interface_expandSource from '!!raw-loader!../../../../public/images/icons/interface/expand.svg'
 import _interface_external_link from '../../../../public/images/icons/interface/external_link.svg?url'
 import _interface_external_linkSource from '!!raw-loader!../../../../public/images/icons/interface/external_link.svg'
+import _interface_fridge from '../../../../public/images/icons/interface/fridge.svg?url'
+import _interface_fridgeSource from '!!raw-loader!../../../../public/images/icons/interface/fridge.svg'
 import _interface_gift from '../../../../public/images/icons/interface/gift.svg?url'
 import _interface_giftSource from '!!raw-loader!../../../../public/images/icons/interface/gift.svg'
 import _interface_horizontal_view from '../../../../public/images/icons/interface/horizontal_view.svg?url'
 import _interface_horizontal_viewSource from '!!raw-loader!../../../../public/images/icons/interface/horizontal_view.svg'
+import _interface_icecream from '../../../../public/images/icons/interface/icecream.svg?url'
+import _interface_icecreamSource from '!!raw-loader!../../../../public/images/icons/interface/icecream.svg'
+import _interface_icecream3 from '../../../../public/images/icons/interface/icecream3.svg?url'
+import _interface_icecream3Source from '!!raw-loader!../../../../public/images/icons/interface/icecream3.svg'
+import _interface_icecubes from '../../../../public/images/icons/interface/icecubes.svg?url'
+import _interface_icecubesSource from '!!raw-loader!../../../../public/images/icons/interface/icecubes.svg'
+import _interface_icestick from '../../../../public/images/icons/interface/icestick.svg?url'
+import _interface_icestickSource from '!!raw-loader!../../../../public/images/icons/interface/icestick.svg'
+import _interface_igloo from '../../../../public/images/icons/interface/igloo.svg?url'
+import _interface_iglooSource from '!!raw-loader!../../../../public/images/icons/interface/igloo.svg'
+import _interface_igloo2 from '../../../../public/images/icons/interface/igloo2.svg?url'
+import _interface_igloo2Source from '!!raw-loader!../../../../public/images/icons/interface/igloo2.svg'
+import _interface_igloo3 from '../../../../public/images/icons/interface/igloo3.svg?url'
+import _interface_igloo3Source from '!!raw-loader!../../../../public/images/icons/interface/igloo3.svg'
+import _interface_igloo4 from '../../../../public/images/icons/interface/igloo4.svg?url'
+import _interface_igloo4Source from '!!raw-loader!../../../../public/images/icons/interface/igloo4.svg'
+import _interface_igloo5 from '../../../../public/images/icons/interface/igloo5.svg?url'
+import _interface_igloo5Source from '!!raw-loader!../../../../public/images/icons/interface/igloo5.svg'
 import _interface_info_circle from '../../../../public/images/icons/interface/info-circle.svg?url'
 import _interface_info_circleSource from '!!raw-loader!../../../../public/images/icons/interface/info-circle.svg'
 import _interface_live from '../../../../public/images/icons/interface/live.svg?url'
@@ -81,6 +101,8 @@ import _interface_percentage from '../../../../public/images/icons/interface/per
 import _interface_percentageSource from '!!raw-loader!../../../../public/images/icons/interface/percentage.svg'
 import _interface_settings from '../../../../public/images/icons/interface/settings.svg?url'
 import _interface_settingsSource from '!!raw-loader!../../../../public/images/icons/interface/settings.svg'
+import _interface_snowflake from '../../../../public/images/icons/interface/snowflake.svg?url'
+import _interface_snowflakeSource from '!!raw-loader!../../../../public/images/icons/interface/snowflake.svg'
 import _interface_spinner from '../../../../public/images/icons/interface/spinner.svg?url'
 import _interface_spinnerSource from '!!raw-loader!../../../../public/images/icons/interface/spinner.svg'
 import _interface_top from '../../../../public/images/icons/interface/top.svg?url'
@@ -177,8 +199,18 @@ const icons = {
   'interface/download': { src: _interface_download.src, source: isServer && _interface_downloadSource, width: _interface_download.width, height: _interface_download.height, aspect: _interface_download.width/_interface_download.height }, 
   'interface/expand': { src: _interface_expand.src, source: isServer && _interface_expandSource, width: _interface_expand.width, height: _interface_expand.height, aspect: _interface_expand.width/_interface_expand.height }, 
   'interface/external_link': { src: _interface_external_link.src, source: isServer && _interface_external_linkSource, width: _interface_external_link.width, height: _interface_external_link.height, aspect: _interface_external_link.width/_interface_external_link.height }, 
+  'interface/fridge': { src: _interface_fridge.src, source: isServer && _interface_fridgeSource, width: _interface_fridge.width, height: _interface_fridge.height, aspect: _interface_fridge.width/_interface_fridge.height }, 
   'interface/gift': { src: _interface_gift.src, source: isServer && _interface_giftSource, width: _interface_gift.width, height: _interface_gift.height, aspect: _interface_gift.width/_interface_gift.height }, 
   'interface/horizontal_view': { src: _interface_horizontal_view.src, source: isServer && _interface_horizontal_viewSource, width: _interface_horizontal_view.width, height: _interface_horizontal_view.height, aspect: _interface_horizontal_view.width/_interface_horizontal_view.height }, 
+  'interface/icecream': { src: _interface_icecream.src, source: isServer && _interface_icecreamSource, width: _interface_icecream.width, height: _interface_icecream.height, aspect: _interface_icecream.width/_interface_icecream.height }, 
+  'interface/icecream3': { src: _interface_icecream3.src, source: isServer && _interface_icecream3Source, width: _interface_icecream3.width, height: _interface_icecream3.height, aspect: _interface_icecream3.width/_interface_icecream3.height }, 
+  'interface/icecubes': { src: _interface_icecubes.src, source: isServer && _interface_icecubesSource, width: _interface_icecubes.width, height: _interface_icecubes.height, aspect: _interface_icecubes.width/_interface_icecubes.height }, 
+  'interface/icestick': { src: _interface_icestick.src, source: isServer && _interface_icestickSource, width: _interface_icestick.width, height: _interface_icestick.height, aspect: _interface_icestick.width/_interface_icestick.height }, 
+  'interface/igloo': { src: _interface_igloo.src, source: isServer && _interface_iglooSource, width: _interface_igloo.width, height: _interface_igloo.height, aspect: _interface_igloo.width/_interface_igloo.height }, 
+  'interface/igloo2': { src: _interface_igloo2.src, source: isServer && _interface_igloo2Source, width: _interface_igloo2.width, height: _interface_igloo2.height, aspect: _interface_igloo2.width/_interface_igloo2.height }, 
+  'interface/igloo3': { src: _interface_igloo3.src, source: isServer && _interface_igloo3Source, width: _interface_igloo3.width, height: _interface_igloo3.height, aspect: _interface_igloo3.width/_interface_igloo3.height }, 
+  'interface/igloo4': { src: _interface_igloo4.src, source: isServer && _interface_igloo4Source, width: _interface_igloo4.width, height: _interface_igloo4.height, aspect: _interface_igloo4.width/_interface_igloo4.height }, 
+  'interface/igloo5': { src: _interface_igloo5.src, source: isServer && _interface_igloo5Source, width: _interface_igloo5.width, height: _interface_igloo5.height, aspect: _interface_igloo5.width/_interface_igloo5.height }, 
   'interface/info-circle': { src: _interface_info_circle.src, source: isServer && _interface_info_circleSource, width: _interface_info_circle.width, height: _interface_info_circle.height, aspect: _interface_info_circle.width/_interface_info_circle.height }, 
   'interface/live': { src: _interface_live.src, source: isServer && _interface_liveSource, width: _interface_live.width, height: _interface_live.height, aspect: _interface_live.width/_interface_live.height }, 
   'interface/lock': { src: _interface_lock.src, source: isServer && _interface_lockSource, width: _interface_lock.width, height: _interface_lock.height, aspect: _interface_lock.width/_interface_lock.height }, 
@@ -190,6 +222,7 @@ const icons = {
   'interface/pending': { src: _interface_pending.src, source: isServer && _interface_pendingSource, width: _interface_pending.width, height: _interface_pending.height, aspect: _interface_pending.width/_interface_pending.height }, 
   'interface/percentage': { src: _interface_percentage.src, source: isServer && _interface_percentageSource, width: _interface_percentage.width, height: _interface_percentage.height, aspect: _interface_percentage.width/_interface_percentage.height }, 
   'interface/settings': { src: _interface_settings.src, source: isServer && _interface_settingsSource, width: _interface_settings.width, height: _interface_settings.height, aspect: _interface_settings.width/_interface_settings.height }, 
+  'interface/snowflake': { src: _interface_snowflake.src, source: isServer && _interface_snowflakeSource, width: _interface_snowflake.width, height: _interface_snowflake.height, aspect: _interface_snowflake.width/_interface_snowflake.height }, 
   'interface/spinner': { src: _interface_spinner.src, source: isServer && _interface_spinnerSource, width: _interface_spinner.width, height: _interface_spinner.height, aspect: _interface_spinner.width/_interface_spinner.height }, 
   'interface/top': { src: _interface_top.src, source: isServer && _interface_topSource, width: _interface_top.width, height: _interface_top.height, aspect: _interface_top.width/_interface_top.height }, 
   'interface/user_avatar': { src: _interface_user_avatar.src, source: isServer && _interface_user_avatarSource, width: _interface_user_avatar.width, height: _interface_user_avatar.height, aspect: _interface_user_avatar.width/_interface_user_avatar.height }, 

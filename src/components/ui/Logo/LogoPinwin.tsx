@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 interface LogoPinwinProps {
@@ -18,12 +19,14 @@ const LogoPinwin: React.FC<LogoPinwinProps> = ({ className, variant = 'default' 
 
   return (
     <div className={`relative ${className}`} style={{ aspectRatio: `${imageSize.width} / ${imageSize.height}` }}>
-      <Image
-        src={imageSrc}
-        alt="Pinwin Logo"
-        fill
-        style={{ objectFit: 'contain' }}
-      />
+      <Link href="/">
+        <Image
+          src={imageSrc}
+          alt="Pinwin Logo"
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      </Link>
     </div>
   )
 }
