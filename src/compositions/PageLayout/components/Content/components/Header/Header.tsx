@@ -6,7 +6,8 @@ import { openModal } from '@locmod/modal'
 import { useAccount } from 'wagmi'
 import { useFreezeBodyScroll } from 'hooks'
 
-import { Icon, Logo } from 'components/ui'
+import { Icon } from 'components/ui'
+import LogoPinwin from 'components/ui/Logo/LogoPinwin'
 import { Button, buttonMessages } from 'components/inputs'
 import Navigation from 'compositions/Navigation/Navigation'
 import LiveSwitcher from 'compositions/LiveSwitcher/LiveSwitcher'
@@ -67,7 +68,10 @@ const Header: React.FC = () => {
               name={isVisible ? 'interface/close' : 'interface/burger_menu'}
             />
           </div>
-          <Logo className="h-4" />
+          <LogoPinwin
+            className="h-9 w-auto"
+            variant="default"
+          />
         </div>
         {
           Boolean(address) ? (
