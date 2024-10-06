@@ -18,8 +18,8 @@ type ChipProps = {
 }
 
 const Chip: React.FC<ChipProps> = ({ title, isActive, isDisabled, onClick }) => {
-  const className = cx('h-7 px-2 text-center hover:text-grey-90 w-full rounded-t-ssm rounded-b-sm', {
-    'bg-brand-50 text-grey-90': isActive,
+  const className = cx('h-7 px-2 text-center hover:text-black-90 w-full rounded-t-ssm rounded-b-sm', {
+    'bg-brand-50 text-black-90': isActive,
     'text-grey-60 bg-bg-l3 hover:text-brand-50': !isActive,
     'cursor-now-allowed text-grey-20': isDisabled,
   })

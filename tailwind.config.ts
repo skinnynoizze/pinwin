@@ -28,7 +28,8 @@ const config: Config = {
         'brand-50': '#B9FCFF', // color azul hielo pinguino
         'brand-15': '#3A2B20',
         'brand-10': '#642900',
-        'brand-5': '#331500',
+        //'brand-5': '#331500',
+        'brand-5': '#111111',
         'grey-90': '#EBEBEB',
         'grey-70': '#ADADAD',
         'grey-60': '#999999',
@@ -38,6 +39,7 @@ const config: Config = {
         'grey-10': '#1F1F1F',
 
         'black-90': '#171717', // Chinese black for text in buttons
+        'black-70': '#3B3B3B', // 
 
         'bg-l0': '#111111',
         'bg-l1': '#171717',

@@ -88,11 +88,11 @@ const BetButton: React.FC<BetButtonProps> = ({ isEnoughBalance, isBalanceFetchin
 
   const rootClassName = cx('flex items-center justify-between py-1 pr-1 border rounded-md mt-3 only:mt-0 w-full', {
     'bg-bg-l1 border-grey-10 cursor-not-allowed': isDisabled,
-    'bg-brand-50 text-grey-90 border-white/20': !isDisabled,
+    'bg-brand-50 text-black-90 border-white/20': !isDisabled,
   })
   const possibleWinClassName = cx('text-caption-12 flex items-center p-2 rounded-sm flex-none select-none', {
-    'bg-grey-15 text-grey-20': isDisabled,
-    'bg-white/20 text-grey-90': !isDisabled,
+    'bg-grey-15 text-grey-40': isDisabled,
+    'bg-white/20 text-black-90': !isDisabled,
   })
 
   return (
