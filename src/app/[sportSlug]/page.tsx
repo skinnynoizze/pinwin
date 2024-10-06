@@ -43,21 +43,19 @@ export default function SportPage() {
   const { slug, leagues } = sport
 
   return (
-    <div className="overflow-hidden">
-      <Navbar>
-        <Sport sport={sport} isPage>
-          {
-            isUnique ? (
-              <UniqueEvents leagues={leagues} />
-            ) : (
-              <FilteredLeagues
-                sportSlug={slug}
-                leagues={leagues}
-              />
-            )
-          }
-        </Sport>
-      </Navbar>
-    </div>
+    <Navbar>
+      <Sport sport={sport} isPage>
+        {
+          isUnique ? (
+            <UniqueEvents leagues={leagues} />
+          ) : (
+            <FilteredLeagues
+              sportSlug={slug}
+              leagues={leagues}
+            />
+          )
+        }
+      </Sport>
+    </Navbar>
   )
 }

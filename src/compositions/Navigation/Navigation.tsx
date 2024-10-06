@@ -16,6 +16,31 @@ import Skeleton from './components/Skeleton/Skeleton'
 
 import messages from './messages'
 
+// Add these at the top of the file, after the imports
+const CATEGORIES = {
+  PREDICTION_MARKETS: 'Prediction Markets',
+  SPORTS: 'Sports',
+  ESPORTS: 'E-Sports',
+} as const
+
+const SPORT_CATEGORIES: Record<string, typeof CATEGORIES[keyof typeof CATEGORIES]> = {
+  politics: CATEGORIES.PREDICTION_MARKETS,
+  football: CATEGORIES.SPORTS,
+  basketball: CATEGORIES.SPORTS,
+  baseball: CATEGORIES.SPORTS,
+  'ice-hockey': CATEGORIES.SPORTS,
+  mma: CATEGORIES.SPORTS,
+  cricket: CATEGORIES.SPORTS,
+  'american-football': CATEGORIES.SPORTS,
+  tennis: CATEGORIES.SPORTS,
+  boxing: CATEGORIES.SPORTS,
+  'rugby-league': CATEGORIES.SPORTS,
+  'rugby-union': CATEGORIES.SPORTS,
+  'dota-2': CATEGORIES.ESPORTS,
+  csgo: CATEGORIES.ESPORTS,
+  lol: CATEGORIES.ESPORTS,
+  cs2: CATEGORIES.ESPORTS,
+}
 
 type LeagueProps = NavigationQuery['sports'][0]['countries'][0]['leagues'][0] & {
   url: string
@@ -149,7 +174,6 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
         gamesCount += leagues.reduce((acc, { games }) => acc + games!.length, 0)
       })
 
-
       result += Math.min(gamesCount, constants.topPageGamePerSportLimit)
     })
 
@@ -161,32 +185,33 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       return []
     }
 
-    return [ ...navigation ].sort((sport1, sport2) => {
-      const sport1Index = constants.sportsOrder.indexOf(sport1.slug)
-      const sport2Index = constants.sportsOrder.indexOf(sport2.slug)
+    return [ ...navigation ]
+      .map(sport => ({
+        ...sport,
+        category: SPORT_CATEGORIES[sport.slug] || CATEGORIES.SPORTS,
+        gamesCount: sport.countries.reduce((acc, country) =>
+          acc + country.leagues.reduce((leagueAcc, league) =>
+            leagueAcc + (league.games?.length || 0), 0), 0),
+      }))
+      .filter(sport => sport.gamesCount > 0)
+      .sort((sport1, sport2) => {
+        const sport1Index = constants.sportsOrder.indexOf(sport1.slug)
+        const sport2Index = constants.sportsOrder.indexOf(sport2.slug)
 
-      if (!sport1.countries.length || !sport1.countries[0].leagues.length) {
-        return 1
-      }
+        if (sport1Index >= 0 && sport2Index >= 0) {
+          return sport1Index - sport2Index
+        }
 
-      if (!sport2.countries.length || !sport2.countries[0].leagues.length) {
-        return -1
-      }
+        if (sport1Index < 0 && sport2Index >= 0) {
+          return 1
+        }
 
-      if (sport1Index >= 0 && sport2Index >= 0) {
-        return sport1Index - sport2Index
-      }
+        if (sport1Index >= 0 && sport2Index < 0) {
+          return -1
+        }
 
-      if (sport1Index < 0 && sport2Index >= 0) {
-        return 1
-      }
-
-      if (sport1Index >= 0 && sport2Index < 0) {
-        return -1
-      }
-
-      return 0
-    })
+        return 0
+      })
   }, [ navigation ])
 
   if (loading) {
@@ -198,9 +223,24 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       <Message className="text-caption-13 font-semibold py-2 px-4 mb-2" value={messages.title} tag="p" />
       <Sport slug="/" name={messages.top} gamesCount={allTopGames} />
       {
-        sortedSports?.map(sport => (
-          <Sport key={sport.slug} {...sport} />
-        ))
+        Object.values(CATEGORIES).map(category => {
+          const sportsInCategory = sortedSports.filter(sport => sport.category === category)
+
+          if (sportsInCategory.length === 0) {
+            return null
+          }
+
+          return (
+            <React.Fragment key={category}>
+              <h2 className="text-caption-13 font-semibold py-2 px-4">{category}</h2>
+              {
+                sportsInCategory.map(sport => (
+                  <Sport key={sport.slug} {...sport} />
+                ))
+              }
+            </React.Fragment>
+          )
+        })
       }
     </div>
   )
