@@ -17,9 +17,9 @@ const walletConnectConnector = walletConnect({
   projectId,
   metadata: {
     name: 'PinWin.xyz',
-    description: 'PinWin.xyz',
+    description: 'The coolest betting platform for sports, politics, e-sports and more.',
     icons: [ `${constants.baseUrl}/${iconAzuroImage.src}` ],
-    url: '',
+    url: 'https://pinwin.xyz',
   },
   showQrModal: true,
 })

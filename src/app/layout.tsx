@@ -24,9 +24,9 @@ const inter = Inter({ subsets: [ 'latin' ] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(constants.baseUrl),
-  title: 'PinWin.xyz - Decentralized betting on sports and esports. Polygon and Gnosis Chain',
-  description: 'PinWin.xyz is a decentralized sports betting platform that allows you to bet on your favorite sports and events. We offer the best odds, live updates, and exclusive promotions on your favorite sports and events.',
-}
+  title: 'PinWin: The coolest betting platform for sports, politics, e-sports and more.',
+  description: 'PinWin.xyz is the coolest betting platform for sports, politics, e-sports and more. We offer the best odds, live updates, and exclusive promotions.',
+} 
 
 export default function RootLayout({
   children,

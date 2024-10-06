@@ -39,7 +39,7 @@ const config: Config = {
         'grey-10': '#1F1F1F',
 
         'black-90': '#171717', // Chinese black for text in buttons
-        'black-70': '#3B3B3B', // 
+        'black-70': '#3B3B3B', // sin usar aun grayish black
 
         'bg-l0': '#111111',
         'bg-l1': '#171717',
