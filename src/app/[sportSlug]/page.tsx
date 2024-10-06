@@ -35,7 +35,7 @@ export default function SportPage() {
     )
   }
 
-  if (!sports) {
+  if (!sports || sports.length === 0) {
     return <EmptyContent />
   }
 
@@ -43,19 +43,21 @@ export default function SportPage() {
   const { slug, leagues } = sport
 
   return (
-    <Navbar>
-      <Sport sport={sport!} isPage>
-        {
-          isUnique ? (
-            <UniqueEvents leagues={leagues} />
-          ) : (
-            <FilteredLeagues
-              sportSlug={slug}
-              leagues={leagues}
-            />
-          )
-        }
-      </Sport>
-    </Navbar>
+    <div className="overflow-hidden">
+      <Navbar>
+        <Sport sport={sport} isPage>
+          {
+            isUnique ? (
+              <UniqueEvents leagues={leagues} />
+            ) : (
+              <FilteredLeagues
+                sportSlug={slug}
+                leagues={leagues}
+              />
+            )
+          }
+        </Sport>
+      </Navbar>
+    </div>
   )
 }

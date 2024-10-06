@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(constants.baseUrl),
   title: 'PinWin: The coolest betting platform for sports, politics, e-sports and more.',
   description: 'PinWin.xyz is the coolest betting platform for sports, politics, e-sports and more. We offer the best odds, live updates, and exclusive promotions.',
-} 
+}
 
 export default function RootLayout({
   children,

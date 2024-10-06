@@ -33,10 +33,10 @@ const currencyIcons: Record<ChainId, IconName> = {
 const sportsOrder = [ 'politics', 'football', 'basketball', 'tennis', 'cricket', 'mma', 'boxing', 'ice-hockey', 'american-football', 'baseball', 'rugby-union', 'rugby-league' ]
 
 const links = {
-  docs: '',
-  terms: '',
-  policy: '',
-  faq: '',
+  docs: 'https://docs.pinwin.xyz/',
+  terms: 'https://docs.pinwin.xyz/terms-of-use',
+  policy: 'https://docs.pinwin.xyz/privacy-policy',
+  faq: 'https://docs.pinwin.xyz/faq',
   waves: 'https://azuro.org/app/waves',
 }
 
