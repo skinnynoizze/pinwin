@@ -32,22 +32,24 @@ const Navbar: React.CFC = ({ children }) => {
   const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
-  const className = cx('border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:items-center justify-between ds:sticky top-[-2px] z-20 bg-bg-l1', {
-    'py-3': !isTimeFilterVisible,
-    'py-[5px]': isTimeFilterVisible,
+  const className = cx('border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:flex-row items-center justify-between sticky z-20 bg-bg-l1', {
+    'py-3 mb:py-0': !isTimeFilterVisible,
+    'py-[4px] mb:py-0': isTimeFilterVisible,
+    'top-0': isLive,
+    'mb:top-[40px] nr:top-[45px] wd:top-[-1px]': !isLive,
   })
 
   return (
     <FilterByTimeProvider>
       <div className={className}>
-        <div className="flex items-center mb:justify-center">
-          <Icon className="size-6 mr-3 text-brand-50 mb:mt-4" name={icon} />
-          <Message className="text-heading-h2 font-bold mb:text-heading-h5 mb:mt-4" value={messages[sportSlug] || sportSlug} />
+        <div className="flex items-center mb:justify-center mb:w-full mb:h-[40px] mb:mt-4 mb:pt-1 ds:h-auto">
+          <Icon className="size-6 mr-3 text-brand-50" name={icon} />
+          <Message className="text-heading-h2 font-bold mb:text-heading-h5" value={messages[sportSlug] || sportSlug} />
         </div>
-        <div className="flex items-center space-x-2 mb:justify-center">
+        <div className="flex items-center space-x-2 mb:justify-center mb:w-full mb:h-[40px] ds:h-auto">
           {
             isTimeFilterVisible && (
-              <TimeFilter className="ds:h-14 mb:h-10" />
+              <TimeFilter className="ds:h-14 mb:h-8" />
             )
           }
           <ChangeOddsView />
