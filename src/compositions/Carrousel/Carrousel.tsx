@@ -39,7 +39,7 @@ const Carrousel: React.FC = () => {
     {
       image: '/images/carrousel/carrousel02.png',
       alt: '',
-      title: 'Unlock Your Crypto Fortune',
+      title: 'Cool Deals to Chill Your Wallet',
       description: 'Waddle your way to crypto riches with PinWin!',
     },
     {
