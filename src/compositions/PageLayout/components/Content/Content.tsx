@@ -35,7 +35,7 @@ const Content: React.CFC = ({ children }) => {
       <main className={mainClassName}>
         {/* Add the PromotionCarousel here */}
         <Media
-          className="mb-4"
+          className="mb-2"
           narrow
           mobile
           wide
