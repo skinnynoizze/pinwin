@@ -1,6 +1,6 @@
 export default {
   top: {
-    en: 'The Coolest On-Chain Bookmaker',
+    en: 'The Coolest Bets On-Chain',
   },
   // Sports
   politics: {
