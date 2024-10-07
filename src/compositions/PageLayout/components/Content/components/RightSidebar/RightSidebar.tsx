@@ -16,13 +16,12 @@ const RightSidebar: React.FC = () => {
 
   return (
     <>
-      <div className="px-6 py-3 sticky top-0 z-20">
+      <div className="px-6 py-3 sticky top-0 z-20 flex mb:justify-end ds:justify-center items-center">
         {
           Boolean(address) ? (
-            <Controls className="ml-auto" />
+            <Controls />
           ) : (
             <Button
-              className="ml-auto"
               title={buttonMessages.connectWallet}
               size={40}
               onClick={() => openModal('ConnectModal')}

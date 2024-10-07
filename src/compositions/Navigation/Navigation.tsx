@@ -1,14 +1,16 @@
 'use client'
 
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { Message } from '@locmod/intl'
 import { useLive, useNavigation } from '@azuro-org/sdk'
-import { type NavigationQuery } from '@azuro-org/toolkit'
+import type { NavigationQuery } from '@azuro-org/toolkit'
 import cx from 'classnames'
+
 import { constants } from 'helpers'
 
-import { Icon, type IconName } from 'components/ui'
+import type { IconName } from 'components/ui'
+import { Icon } from 'components/ui'
 import { Href } from 'components/navigation'
 import { Flag } from 'components/dataDisplay'
 
@@ -24,22 +26,22 @@ const CATEGORIES = {
 } as const
 
 const SPORT_CATEGORIES: Record<string, typeof CATEGORIES[keyof typeof CATEGORIES]> = {
-  politics: CATEGORIES.PREDICTION_MARKETS,
-  football: CATEGORIES.SPORTS,
-  basketball: CATEGORIES.SPORTS,
-  baseball: CATEGORIES.SPORTS,
+  'politics': CATEGORIES.PREDICTION_MARKETS,
+  'football': CATEGORIES.SPORTS,
+  'basketball': CATEGORIES.SPORTS,
+  'baseball': CATEGORIES.SPORTS,
   'ice-hockey': CATEGORIES.SPORTS,
-  mma: CATEGORIES.SPORTS,
-  cricket: CATEGORIES.SPORTS,
+  'mma': CATEGORIES.SPORTS,
+  'cricket': CATEGORIES.SPORTS,
   'american-football': CATEGORIES.SPORTS,
-  tennis: CATEGORIES.SPORTS,
-  boxing: CATEGORIES.SPORTS,
+  'tennis': CATEGORIES.SPORTS,
+  'boxing': CATEGORIES.SPORTS,
   'rugby-league': CATEGORIES.SPORTS,
   'rugby-union': CATEGORIES.SPORTS,
   'dota-2': CATEGORIES.ESPORTS,
-  csgo: CATEGORIES.ESPORTS,
-  lol: CATEGORIES.ESPORTS,
-  cs2: CATEGORIES.ESPORTS,
+  'csgo': CATEGORIES.ESPORTS,
+  'lol': CATEGORIES.ESPORTS,
+  'cs2': CATEGORIES.ESPORTS,
 }
 
 type LeagueProps = NavigationQuery['sports'][0]['countries'][0]['leagues'][0] & {
@@ -79,66 +81,102 @@ type Top = {
   gamesCount?: number
 }
 
-type SportProps = NavigationQuery['sports'][0] | Top
+type SportProps = {
+  slug: string
+  name: string | Intl.Message
+  isExpanded: boolean
+  onToggle: () => void
+  category?: typeof CATEGORIES[keyof typeof CATEGORIES]
+  gamesCount?: number
+  countries?: NavigationQuery['sports'][0]['countries']
+}
 
 const Sport: React.FC<SportProps> = (props) => {
-  const { slug, name, countries } = props as NavigationQuery['sports'][0]
-  const { gamesCount } = props as Top
+  const {
+    slug,
+    name,
+    countries,
+    isExpanded,
+    onToggle,
+    category,
+    gamesCount,
+  } = props
 
   const { sportSlug } = useParams()
 
   const isTop = slug === '/'
-  const isActive = sportSlug === slug || isTop && !sportSlug
   const isUnique = slug === 'unique'
+  const isActive = sportSlug === slug || (isTop && !sportSlug)
 
   const rootClassName = cx('p-px rounded-md overflow-hidden', {
-    'bg-card-border-top': isActive,
+    'bg-card-border-top': isExpanded,
   })
-  const wrapperClassName = cx({ 'bg-bg-l1 rounded-md': isActive })
-  const buttonClassName = cx('group px-4 py-2 flex w-full items-center justify-between hover:text-brand-50', {
-    'text-grey-60': !isActive,
-    'text-brand-50': isActive,
+  const wrapperClassName = cx({ 'bg-bg-l1 rounded-md': isExpanded })
+  const buttonClassName = cx('group px-4 py-2 flex w-full items-center justify-between', {
+    'text-grey-60 hover:text-brand-50': !isExpanded && !isActive,
+    'text-brand-50': isExpanded || isActive,
   })
   const iconClassName = cx('h-4 w-4', {
-    'rotate-180': isActive,
+    'rotate-180': isExpanded,
   })
   const icon: IconName = isTop || isUnique ? 'interface/icecream' : `sport/${slug}` as IconName
 
   const leagues = useMemo(() => {
     if (!countries) {
-      return
+      return undefined
     }
 
-    return countries.map(({ leagues, name, slug: countrySlug }) => {
-      return leagues.map(league => ({
+    return countries.flatMap(({ leagues: countryLeagues, name: countryName, slug: countrySlug }) =>
+      countryLeagues.map((league) => ({
         url: `/${slug}/${countrySlug}/${league.slug}`,
         ...league,
         country: {
-          name,
+          name: countryName,
           slug: countrySlug,
         },
       }))
-    }).flat()
-  }, [ countries ])
+    )
+  }, [ countries, slug ])
+
+  const handleClick = () => {
+    onToggle()
+  }
+
+  if (isTop) {
+
+    return (
+      <Href to="/" className={buttonClassName}>
+        <div className="flex items-center">
+          <Icon className="size-4 mr-2" name={icon} />
+          <Message className="text-caption-13" value={name} />
+        </div>
+        <div className="text-caption-12 min-w-4 text-center">
+          {gamesCount || 0}
+        </div>
+      </Href>
+    )
+  }
 
   return (
     <div className={rootClassName}>
       <div className={wrapperClassName}>
-        <Href to={`/${slug}`} className={buttonClassName}>
+        <button onClick={handleClick} className={buttonClassName}>
           <div className="flex items-center">
             <Icon className="size-4 mr-2" name={icon} />
             <Message className="text-caption-13" value={name} />
           </div>
           {
-            Boolean(isTop || isUnique || !leagues?.length) ? (
-              <div className="text-caption-12 min-w-4 text-center">{gamesCount || 0}</div>
+            Boolean(isUnique || !leagues?.length) ? (
+              <div className="text-caption-12 min-w-4 text-center">
+                {gamesCount || 0}
+              </div>
             ) : (
               <Icon className={iconClassName} name="interface/chevron_down" />
             )
           }
-        </Href>
+        </button>
         {
-          Boolean(!isUnique && isActive && leagues) && (
+          Boolean(!isUnique && isExpanded && leagues) && (
             leagues?.map((league) => (
               <League key={`${league.country.slug}-${league.slug}`} {...league} />
             ))
@@ -159,10 +197,36 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
     withGameCount: true,
     isLive,
   })
+  const [ expandedSport, setExpandedSport ] = useState<string | null>(null)
+  const params = useParams()
+  const sportSlug = Array.isArray(params.sportSlug) ? params.sportSlug[0] : params.sportSlug
+
+  useEffect(() => {
+    const storedExpandedSport = localStorage.getItem('expandedSport')
+
+    if (storedExpandedSport) {
+      setExpandedSport(storedExpandedSport)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (expandedSport) {
+      localStorage.setItem('expandedSport', expandedSport)
+    }
+    else {
+      localStorage.removeItem('expandedSport')
+    }
+  }, [ expandedSport ])
+
+  useEffect(() => {
+    if (sportSlug) {
+      setExpandedSport(sportSlug)
+    }
+  }, [ sportSlug ])
 
   const allTopGames = useMemo(() => {
     if (!navigation) {
-      return
+      return undefined
     }
 
     let result = 0
@@ -171,7 +235,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       let gamesCount = 0
 
       countries.forEach(({ leagues }) => {
-        gamesCount += leagues.reduce((acc, { games }) => acc + games!.length, 0)
+        gamesCount += leagues.reduce((acc, { games }) => acc + (games?.length || 0), 0)
       })
 
       result += Math.min(gamesCount, constants.topPageGamePerSportLimit)
@@ -186,14 +250,14 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
     }
 
     return [ ...navigation ]
-      .map(sport => ({
+      .map((sport) => ({
         ...sport,
         category: SPORT_CATEGORIES[sport.slug] || CATEGORIES.SPORTS,
         gamesCount: sport.countries.reduce((acc, country) =>
           acc + country.leagues.reduce((leagueAcc, league) =>
             leagueAcc + (league.games?.length || 0), 0), 0),
       }))
-      .filter(sport => sport.gamesCount > 0)
+      .filter((sport) => sport.gamesCount > 0)
       .sort((sport1, sport2) => {
         const sport1Index = constants.sportsOrder.indexOf(sport1.slug)
         const sport2Index = constants.sportsOrder.indexOf(sport2.slug)
@@ -214,14 +278,46 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       })
   }, [ navigation ])
 
+  const handleSportToggle = (slug: string) => {
+    setExpandedSport((prevExpanded) => {
+      const newExpanded = prevExpanded === slug ? null : slug
+
+      if (newExpanded) {
+        localStorage.setItem('expandedSport', newExpanded)
+      }
+      else {
+        localStorage.removeItem('expandedSport')
+      }
+
+      return newExpanded
+    })
+  }
+
+  const handleTopEventsClick = () => {
+    // Close the expanded sport when clicking on Top Events
+    setExpandedSport(null)
+    // You may want to add navigation logic here if needed
+  }
+
   if (loading) {
+
     return <Skeleton className={className} />
   }
 
   return (
     <div className={className}>
-      <Message className="text-caption-13 font-semibold py-2 px-4 mb-2" value={messages.title} tag="p" />
-      <Sport slug="/" name={messages.top} gamesCount={allTopGames} />
+      <Message
+        className="text-caption-13 font-semibold py-2 px-4 mb-2"
+        value={messages.title}
+        tag="p"
+      />
+      <Sport
+        slug="/"
+        name={messages.top}
+        gamesCount={allTopGames}
+        isExpanded={false} // Top Events should not be expandable
+        onToggle={handleTopEventsClick}
+      />
       {
         Object.values(CATEGORIES).map(category => {
           const sportsInCategory = sortedSports.filter(sport => sport.category === category)
@@ -232,10 +328,17 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
 
           return (
             <React.Fragment key={category}>
-              <h2 className="text-caption-13 font-semibold py-2 px-4">{category}</h2>
+              <h2 className="text-caption-13 font-semibold py-2 px-4">
+                {category}
+              </h2>
               {
                 sportsInCategory.map(sport => (
-                  <Sport key={sport.slug} {...sport} />
+                  <Sport
+                    key={sport.slug}
+                    {...sport}
+                    isExpanded={expandedSport === sport.slug}
+                    onToggle={() => handleSportToggle(sport.slug)}
+                  />
                 ))
               }
             </React.Fragment>

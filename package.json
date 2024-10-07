@@ -19,6 +19,7 @@
     "@azuro-org/dictionaries": "^3.0.16",
     "@azuro-org/sdk": "^5.2.11",
     "@floating-ui/react-dom-interactions": "^0.13.3",
+    "@gatefi/js-sdk": "^0.20.0",
     "@glidejs/glide": "^3.6.2",
     "@headlessui/react": "1.7.19",
     "@headlessui/tailwindcss": "0.2.1",
