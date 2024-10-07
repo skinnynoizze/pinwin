@@ -1,0 +1,84 @@
+@import '../../scss/media';
+
+.carrouselWrapper {
+  width: 99.9%;
+  overflow: hidden;
+  z-index: 1; // Ensure the carousel is above other content
+}
+
+.carrousel {
+    width: 100%;
+    margin: 0 auto;
+
+    :global {
+      .slick-slider {
+        width: 100%;
+      }
+
+      .slick-slide {
+        width: 100%;
+        padding: 0;
+      }
+
+      .slick-slide img {
+        width: 100%;
+        max-height: 400px;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.8) saturate(0.8) contrast(0.9) grayscale(0.1);
+        transition: filter 0.3s ease;
+
+        @include mobile {
+          max-height: 200px;
+          height: 200px;
+        }
+
+        @include narrow {
+          max-height: 300px;
+          height: 300px;
+        }
+      }
+
+      .slick-prev, .slick-next {
+        z-index: 1;
+
+        @include mobile {
+          display: none !important;
+        }
+      }
+
+      .slick-prev {
+        left: 20px;
+      }
+
+      .slick-next {
+        right: 20px;
+      }
+
+      .slick-prev:before, .slick-next:before {
+        font-size: 30px;
+
+        @include narrow {
+          font-size: 24px;
+        }
+      }
+
+      .slick-dots {
+        bottom: 20px;
+
+        @include mobile {
+          bottom: 10px;
+        }
+      }
+
+      .slick-dots li button:before {
+        font-size: 12px;
+        color: white;
+
+        @include mobile {
+          font-size: 8px;
+        }
+      }
+    }
+  }
