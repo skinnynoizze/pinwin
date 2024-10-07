@@ -36,7 +36,7 @@ const Navbar: React.CFC = ({ children }) => {
     'py-3 mb:py-0': !isTimeFilterVisible,
     'py-[4px] mb:py-0': isTimeFilterVisible,
     'top-0': isLive,
-    'mb:top-[40px] nr:top-[45px] wd:top-[-1px]': !isLive,
+    'mb:top-[40px] nr:top-[45px] ds:top-[0px]': !isLive,
   })
 
   return (
