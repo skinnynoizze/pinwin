@@ -1,33 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { type GameQuery, GameStatus } from '@azuro-org/toolkit'
 import { Message } from '@locmod/intl'
-
-import { getGameDateTime } from 'helpers/getters'
 import { Icon, LiveLabel, type IconName } from 'components/ui'
 import { Flag, OpponentLogo } from 'components/dataDisplay'
 
 import messages from './messages'
-
-
-export const EventInfoSkeleton: React.FC = () => {
-  return (
-    <div className="-mx-2">
-      <div className="flex items-center justify-center text-grey-60 text-caption-12 font-medium py-3 border-b border-b-grey-10">
-        <div className="bone size-4 rounded-full" />
-        <div className="bone mr-2 -ml-1 size-4 rounded-full" />
-        <div className="bone h-[0.875rem] w-40 rounded-full" />
-      </div>
-      <div className="ds:py-8 mb:py-4 w-full mb:px-9">
-        <div className="relative flex items-center ds:justify-around mb:justify-center ds:max-w-[50%] mx-auto">
-          <div className="bone mb:absolute mb:left-0 mb:top-0 size-12 rounded-full" />
-          <div className="bone h-[1.125rem] w-10 rounded-full" />
-          <div className="bone mb:absolute mb:right-0 mb:top-0 size-12 rounded-full" />
-        </div>
-        <div className="bone mx-auto h-[1.625rem] w-24 rounded-full mt-4" />
-      </div>
-    </div>
-  )
-}
+import OddsChart from '../OddsChart';
+import { getGameDateTime } from 'helpers/getters'
 
 type TitleProps = {
   status: GameStatus
@@ -72,6 +51,8 @@ type EventInfoProps = {
 }
 
 const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
+  const [isChartLoading, setIsChartLoading] = useState(false);
+
   const {
     sport: {
       slug: sportSlug,
@@ -105,8 +86,33 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
         </div>
         <div className="text-center ds:text-heading-h3 mb:text-heading-h5 font-bold mt-4">{title}</div>
       </div>
+
+      {game.gameId && (
+        <OddsChart 
+          gameId={game.gameId} 
+          isLoading={isChartLoading} 
+          setIsLoading={setIsChartLoading}
+        />
+      )}
     </div>
   )
 }
+
+// Updated EventInfoSkeleton component without chart elements
+export const EventInfoSkeleton: React.FC = () => {
+  return (
+    <div className="animate-pulse -mx-2">
+      <div className="h-8 bg-bg-l2 rounded w-full mb-4"></div>
+      <div className="ds:py-8 mb:py-4 w-full mb:px-9">
+        <div className="flex justify-around items-center">
+          <div className="h-12 w-12 bg-bg-l2 rounded-full"></div>
+          <div className="h-12 w-24 bg-bg-l2 rounded"></div>
+          <div className="h-12 w-12 bg-bg-l2 rounded-full"></div>
+        </div>
+        <div className="h-6 bg-bg-l2 rounded w-3/4 mx-auto mt-4"></div>
+      </div>
+    </div>
+  );
+};
 
 export default EventInfo

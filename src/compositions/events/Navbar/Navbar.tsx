@@ -34,15 +34,15 @@ const Navbar: React.CFC = ({ children }) => {
 
   const className = cx('border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:flex-row items-center justify-between sticky z-20 bg-bg-l1', {
     'py-3 mb:py-0': !isTimeFilterVisible,
-    'py-[4px] mb:py-0': isTimeFilterVisible,
+    'ds:py-[4.5px] mb:py-0': isTimeFilterVisible,
     'top-0': isLive,
-    'mb:top-[40px] nr:top-[45px] ds:top-[0px]': !isLive,
+    'mb:top-[60px] nr:top-[45px] ds:top-[-1px]': !isLive,
   })
 
   return (
     <FilterByTimeProvider>
       <div className={className}>
-        <div className="flex items-center mb:justify-center mb:w-full mb:h-[40px] mb:mt-4 mb:pt-1 ds:h-auto">
+        <div className="flex items-center mb:justify-center mb:w-full mb:h-[40px] mb:mt-2 ds:h-auto">
           <Icon className="size-6 mr-3 text-brand-50" name={icon} />
           <Message className="text-heading-h2 font-bold mb:text-heading-h5" value={messages[sportSlug] || sportSlug} />
         </div>

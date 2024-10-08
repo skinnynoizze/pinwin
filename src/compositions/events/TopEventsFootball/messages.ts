@@ -1,7 +1,14 @@
 export default {
-  top: {
-    en: 'The Coolest Bookmaker',
+  title: {
+    en: 'today’s',
   },
+  top: {
+    en: 'Top',
+  },
+  events: {
+    en: 'Football Events',
+  },
+
   // Sports
   politics: {
     en: 'Politics',
@@ -51,7 +58,10 @@ export default {
   lol: {
     en: 'League of Legends',
   },
-  unique: {
-    en: 'Unique Events',
+  gamefi: {
+    en: 'GameFi',
+  },
+  other: {
+    en: 'Other',
   },
 }
