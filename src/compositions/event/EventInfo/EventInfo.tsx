@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { type GameQuery, GameStatus } from '@azuro-org/toolkit'
 import { Message } from '@locmod/intl'
+import { getGameDateTime } from 'helpers/getters'
 import { Icon, LiveLabel, type IconName } from 'components/ui'
 import { Flag, OpponentLogo } from 'components/dataDisplay'
 
 import messages from './messages'
-import OddsChart from '../OddsChart';
-import { getGameDateTime } from 'helpers/getters'
+import OddsChart from '../OddsChart'
+
 
 type TitleProps = {
   status: GameStatus
@@ -51,7 +52,7 @@ type EventInfoProps = {
 }
 
 const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
-  const [isChartLoading, setIsChartLoading] = useState(false);
+  const [ isChartLoading, setIsChartLoading ] = useState(false)
 
   const {
     sport: {
@@ -88,9 +89,9 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
       </div>
 
       {game.gameId && (
-        <OddsChart 
-          gameId={game.gameId} 
-          isLoading={isChartLoading} 
+        <OddsChart
+          gameId={game.gameId}
+          isLoading={isChartLoading}
           setIsLoading={setIsChartLoading}
         />
       )}
@@ -99,20 +100,18 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
 }
 
 // Updated EventInfoSkeleton component without chart elements
-export const EventInfoSkeleton: React.FC = () => {
-  return (
-    <div className="animate-pulse -mx-2">
-      <div className="h-8 bg-bg-l2 rounded w-full mb-4"></div>
-      <div className="ds:py-8 mb:py-4 w-full mb:px-9">
-        <div className="flex justify-around items-center">
-          <div className="h-12 w-12 bg-bg-l2 rounded-full"></div>
-          <div className="h-12 w-24 bg-bg-l2 rounded"></div>
-          <div className="h-12 w-12 bg-bg-l2 rounded-full"></div>
-        </div>
-        <div className="h-6 bg-bg-l2 rounded w-3/4 mx-auto mt-4"></div>
+export const EventInfoSkeleton: React.FC = () => (
+  <div className="animate-pulse -mx-2">
+    <div className="h-8 bg-bg-l2 rounded w-full mb-4" />
+    <div className="ds:py-8 mb:py-4 w-full mb:px-9">
+      <div className="flex justify-around items-center">
+        <div className="h-12 w-12 bg-bg-l2 rounded-full" />
+        <div className="h-12 w-24 bg-bg-l2 rounded" />
+        <div className="h-12 w-12 bg-bg-l2 rounded-full" />
       </div>
+      <div className="h-6 bg-bg-l2 rounded w-3/4 mx-auto mt-4" />
     </div>
-  );
-};
+  </div>
+)
 
 export default EventInfo
