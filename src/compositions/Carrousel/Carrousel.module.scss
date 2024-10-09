@@ -1,123 +1,68 @@
 @import '../../scss/media';
 
-.carrouselWrapper {
-  width: 99.9%;
-  overflow: hidden;
-  margin: 0 auto;
-  border-radius: 0 0 0 1.25rem; // Apply border radius to wrapper
-}
-
-.carrousel {
+.bannerWrapper {
   width: 100%;
-  margin: 0 auto;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 0 1.25rem;
 
-  :global {
-    .slick-slider {
-      width: 100%;
-      overflow: hidden; // Add this to hide overflowing content
-    }
+  @include mobile {
+    height: 200px;
+  }
 
-    .slick-list {
-      border-radius: 0 0 0 1.25rem; // Apply border radius to list
-      overflow: hidden; // Ensure content doesn't overflow
-    }
-
-    .slick-slide {
-      width: 100%;
-      padding: 0;
-      position: relative;
-    }
-
-    .slick-slide > div {
-      overflow: hidden; // Add this to hide overflowing content
-    }
-
-    .slick-slide img {
-      width: 100%;
-      max-height: 400px;
-      height: 400px;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(0.8) saturate(0.8) contrast(0.9) grayscale(0.1);
-      transition: filter 0.3s ease;
-
-      @include mobile {
-        max-height: 200px;
-        height: 200px;
-      }
-
-      @include narrow {
-        max-height: 300px;
-        height: 300px;
-      }
-    }
-
-    .slick-prev, .slick-next {
-      z-index: 1;
-
-      @include mobile {
-        display: none !important;
-      }
-    }
-
-    .slick-prev {
-      left: 20px;
-    }
-
-    .slick-next {
-      right: 20px;
-    }
-
-    .slick-prev:before, .slick-next:before {
-      font-size: 30px;
-
-      @include narrow {
-        font-size: 24px;
-      }
-    }
-
-    .slick-dots {
-      bottom: 20px;
-
-      @include mobile {
-        bottom: 10px;
-      }
-    }
-
-    .slick-dots li button:before {
-      font-size: 12px;
-      color: white;
-
-      @include mobile {
-        font-size: 8px;
-      }
-    }
+  @include narrow {
+    height: 300px;
   }
 }
 
-// Add these new styles at the end of the file
+.bannerSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.next {
+    opacity: 0;
+  }
+}
+
 .slideContent {
   position: absolute;
-  top: 50%; // Change from bottom to top
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); // Center both vertically and horizontally
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   z-index: 2;
   padding: 20px;
-  width: 80%; // Limit width to 80% of the slide
-  max-width: 600px; // Maximum width
-  background-color: rgba(0, 0, 0, 0.6); // Translucent background
-  border-radius: 10px; // Rounded corners
+  width: 80%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
+
+  &.transitioning {
+    opacity: 0;
+  }
 
   @include mobile {
-    width: 90%; // Slightly wider on mobile
+    width: 90%;
     padding: 15px;
   }
 }
 
 .slideTitle {
-  font-size: 32px; // Increased font size
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -128,9 +73,9 @@
 }
 
 .slideDescription {
-  font-size: 20px; // Increased font size
+  font-size: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.4; // Improved readability
+  line-height: 1.4;
 
   @include mobile {
     font-size: 16px;
