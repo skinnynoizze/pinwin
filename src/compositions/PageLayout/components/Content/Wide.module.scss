@@ -1,8 +1,8 @@
 $leftSidebar: 240px;
-$rightSidebar: 316px; // Reduced from 316px
+$rightSidebar: 316px;
+$collapsedRightSidebar: 48px;
 
 @include wide {
-
   .root {
     max-width: 1440px;
   }
@@ -14,11 +14,14 @@ $rightSidebar: 316px; // Reduced from 316px
 
   .rightSidebar {
     position: sticky;
-    width: $rightSidebar;
+    width: auto;
+    max-width: $rightSidebar;
+    transition: max-width 0.3s ease-in-out;
   }
 
   .main {
-    max-width: calc(100% - $leftSidebar);
+    max-width: calc(100% - $leftSidebar - $collapsedRightSidebar);
+    transition: max-width 0.3s ease-in-out;
 
     &.withRightSidebar {
       max-width: calc(100% - $leftSidebar - $rightSidebar);

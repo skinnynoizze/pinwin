@@ -2,7 +2,7 @@
 
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import Glide from '@glidejs/glide'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Message } from '@locmod/intl'
 import { useParams } from 'next/navigation'
 import { useActiveMarkets, useGames } from '@azuro-org/sdk'
@@ -95,15 +95,16 @@ const Card: React.FC<CardProps> = ({ game }) => {
 }
 
 const sliderConfiguration = {
-  gap: 8,
-  perView: 3,
+  type: 'carousel',
+  gap: 16,
+  perView: 'auto',
   startAt: 0,
   focusAt: 0,
   autoplay: 5000,
   bound: true,
   breakpoints: {
     802: {
-      perView: 1.1,
+      perView: 1,
     },
   },
 }
@@ -111,33 +112,47 @@ const sliderConfiguration = {
 const Events: React.FC = () => {
   const { games, loading } = useGames({
     filter: {
-      limit: 9,
+      limit: 15, // Increased from 9 to 15
     },
     orderBy: Game_OrderBy.Turnover,
   })
   const containerRef = useRef<HTMLDivElement>(null)
-
+  const [ slider, setSlider ] = useState<Glide | null>(null)
 
   useEffect(() => {
     if (!games?.length) {
       return
     }
 
-    const slider = new Glide(containerRef.current, sliderConfiguration)
+    const newSlider = new Glide(containerRef.current, sliderConfiguration)
+    newSlider.mount()
+    setSlider(newSlider)
 
-    slider.mount()
+    const handleResize = () => {
+      newSlider.update()
+    }
+
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      slider?.destroy()
+      newSlider.destroy()
+      window.removeEventListener('resize', handleResize)
     }
   }, [ games ])
 
+  useEffect(() => {
+    // This effect will run when the sidebar is toggled
+    if (slider) {
+      slider.update()
+    }
+  }, [ slider ])
+
   if (loading) {
     return (
-      <div className="flex items-center justify-between mt-6 space-x-2">
+      <div className="grid grid-cols-3 gap-4 mt-6">
         <CardSkeleton />
-        <CardSkeleton className="mb:hidden" />
-        <CardSkeleton className="mb:hidden" />
+        <CardSkeleton />
+        <CardSkeleton />
       </div>
     )
   }
@@ -146,13 +161,11 @@ const Events: React.FC = () => {
     <div ref={containerRef} className="glide !static group mt-6">
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
-          {
-            games?.map((game, index) => (
-              <li key={index} className="glide__slide overflow-hidden">
-                <Card game={game} />
-              </li>
-            ))
-          }
+          {games?.map((game, index) => (
+            <li key={index} className="glide__slide !w-[calc(33.333%-11px)]">
+              <Card game={game} />
+            </li>
+          ))}
         </ul>
       </div>
       <div className="absolute top-6 right-6 flex items-center" data-glide-el="controls">
