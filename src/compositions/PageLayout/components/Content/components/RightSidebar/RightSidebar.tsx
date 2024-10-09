@@ -9,7 +9,6 @@ import { Media } from 'components/layout'
 import TabbedBetslip from 'compositions/TabbedBetslip/TabbedBetslip'
 import Controls from '../Controls/Controls'
 
-
 interface RightSidebarProps {
   onToggle: (expanded: boolean) => void
 }
@@ -50,7 +49,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
               />
             )}
           </div>
-          <div className="bg-bg-l1 border border-grey-10 rounded-r-md -ml-px overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">
+          <div className="bg-bg-l1 border border-grey-10 border-l-0 rounded-r-md overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">
             <TabbedBetslip />
           </div>
         </div>
