@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 
 import { Media } from 'components/layout'
@@ -8,18 +8,18 @@ import MobileBetslipButton from 'compositions/MobileBetslipButton/MobileBetslipB
 import Carrousel from 'compositions/Carrousel/Carrousel'
 import { LeftSidebar, RightSidebar, Header } from './components'
 
-
 import ns from './Narrow.module.scss'
 import ws from './Wide.module.scss'
 
 
-const Content: React.CFC = ({ children }) => {
+const Content: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const [ isRightSidebarExpanded, setIsRightSidebarExpanded ] = useState(true)
 
   const rootClassName = cx('h-full flex flex-col wd:flex-row min-h-screen mx-auto wd:px-2 wd:pb-2', ws.root)
   const mainClassName = cx(ns.main, ws.main,
     'mx-auto flex-1 w-full wd:h-auto',
     {
-      [ws.withRightSidebar]: true,
+      [ws.withRightSidebar]: isRightSidebarExpanded,
     }
   )
   const sidebarClassName = 'sticky top-0 z-[100] shrink-0 no-scrollbar'
@@ -33,7 +33,6 @@ const Content: React.CFC = ({ children }) => {
         <Header />
       </Media>
       <main className={mainClassName}>
-        {/* Add the PromotionCarousel here */}
         <Media
           className="mb-2"
           narrow
@@ -42,14 +41,12 @@ const Content: React.CFC = ({ children }) => {
         >
           <Carrousel />
         </Media>
-        {/* search block */}
-        {/* <Media className="h-16" wide /> */}
-        <div className="flex flex-col bg-bg-l1 border border-grey-10 wd:rounded-l-md -wd:rounded-t-md px-2 min-h-[calc(100vh_-_4.5rem)]">
+        <div className="flex flex-col bg-bg-l1 border border-grey-10 wd:rounded-l-md -wd:rounded-t-md px-2 min-h-[calc(100vh_-_4.5rem)] w-full">
           {children}
         </div>
       </main>
       <Media className={cx('h-[calc(100vh_-_0.5rem)]', ws.rightSidebar, sidebarClassName)} wide>
-        <RightSidebar />
+        <RightSidebar onToggle={setIsRightSidebarExpanded} />
       </Media>
       <Media narrow mobile>
         <MobileBetslipButton />

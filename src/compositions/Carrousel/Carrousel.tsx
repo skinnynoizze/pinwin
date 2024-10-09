@@ -1,10 +1,7 @@
-import React from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import React, { useState, useEffect } from 'react'
 import styles from './Carrousel.module.scss'
 
-// Add this interface for slide data
+
 interface SlideData {
   image: string
   alt: string
@@ -13,22 +10,9 @@ interface SlideData {
 }
 
 const Carrousel: React.FC = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    centerMode: false,
-    variableWidth: false,
-    adaptiveHeight: true,
-  }
+  const [ currentSlide, setCurrentSlide ] = useState(0)
+  const [ isTransitioning, setIsTransitioning ] = useState(false)
 
-  // Add this array of slide data
   const slides: SlideData[] = [
     {
       image: '/images/carrousel/carrousel01.png',
@@ -56,21 +40,32 @@ const Carrousel: React.FC = () => {
     },
   ]
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length)
+        setIsTransitioning(false)
+      }, 500) // Half of the transition duration
+    }, 5000) // Change slide every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [ slides.length ])
+
   return (
-    <div className={styles.carrouselWrapper}>
-      <Slider {...settings} className={styles.carrousel}>
-        {
-          slides.map((slide, index) => (
-            <div key={index}>
-              <img src={slide.image} alt={slide.alt} />
-              <div className={styles.slideContent}>
-                <h2 className={styles.slideTitle}>{slide.title}</h2>
-                <p className={styles.slideDescription}>{slide.description}</p>
-              </div>
-            </div>
-          ))
-        }
-      </Slider>
+    <div className={styles.bannerWrapper}>
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`${styles.bannerSlide} ${index === currentSlide ? styles.active : ''}`}
+          style={{ backgroundImage: `url(${slide.image})` }}
+        >
+          <div className={`${styles.slideContent} ${isTransitioning ? styles.transitioning : ''}`}>
+            <h2 className={styles.slideTitle}>{slide.title}</h2>
+            <p className={styles.slideDescription}>{slide.description}</p>
+          </div>
+        </div>
+      ))}
     </div>
   )
 }
