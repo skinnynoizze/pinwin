@@ -32,12 +32,15 @@ const Navbar: React.CFC = ({ children }) => {
   const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
-  const className = cx('border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:flex-row items-center justify-between sticky z-20 bg-bg-l1', {
-    'py-3 mb:py-0': !isTimeFilterVisible,
-    'ds:py-[4.5px] mb:py-0': isTimeFilterVisible,
-    'top-0': isLive,
-    'mb:top-[60px] nr:top-[45px] ds:top-[-1px]': !isLive,
-  })
+  const className = cx(
+    'border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:flex-row items-center justify-between sticky z-20 bg-bg-l1 rounded-t-lg overflow-hidden',
+    {
+      'py-3 mb:py-0': !isTimeFilterVisible,
+      'ds:py-[4.5px] mb:py-0': isTimeFilterVisible,
+      'top-0': isLive,
+      'mb:top-[60px] nr:top-[45px] ds:top-0': !isLive,
+    }
+  )
 
   return (
     <FilterByTimeProvider>
