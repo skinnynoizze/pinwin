@@ -20,8 +20,9 @@ $collapsedRightSidebar: 48px;
   }
 
   .main {
-    max-width: calc(100% - $leftSidebar - $collapsedRightSidebar);
+    max-width: calc(100% - $leftSidebar);
     transition: max-width 0.3s ease-in-out;
+    flex-grow: 1;
 
     &.withRightSidebar {
       max-width: calc(100% - $leftSidebar - $rightSidebar);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Carrousel.module.scss'
 
+
 interface SlideData {
   image: string
   alt: string
@@ -9,8 +10,8 @@ interface SlideData {
 }
 
 const Carrousel: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [ currentSlide, setCurrentSlide ] = useState(0)
+  const [ isTransitioning, setIsTransitioning ] = useState(false)
 
   const slides: SlideData[] = [
     {
@@ -49,7 +50,7 @@ const Carrousel: React.FC = () => {
     }, 5000) // Change slide every 5 seconds
 
     return () => clearInterval(interval)
-  }, [slides.length])
+  }, [ slides.length ])
 
   return (
     <div className={styles.bannerWrapper}>

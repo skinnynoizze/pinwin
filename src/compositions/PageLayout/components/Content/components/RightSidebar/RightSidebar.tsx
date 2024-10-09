@@ -9,6 +9,7 @@ import { Media } from 'components/layout'
 import TabbedBetslip from 'compositions/TabbedBetslip/TabbedBetslip'
 import Controls from '../Controls/Controls'
 
+
 interface RightSidebarProps {
   onToggle: (expanded: boolean) => void
 }
