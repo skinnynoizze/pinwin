@@ -7,6 +7,7 @@ import { useActiveMarkets, useGames } from '@azuro-org/sdk'
 import { Game_OrderBy, type GamesQuery, GameStatus } from '@azuro-org/toolkit'
 import cx from 'classnames'
 import { getGameDateTime } from 'helpers/getters'
+import { useMedia } from 'contexts' // Add this import
 
 import { Icon, type IconName } from 'components/ui'
 import { OpponentLogo } from 'components/dataDisplay'
@@ -115,7 +116,9 @@ const TopEvents: React.FC = () => {
   })
   const [ currentIndex, setCurrentIndex ] = useState(0)
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const totalGroups = Math.ceil((games?.length || 0) / 3)
+  const { isMobileView } = useMedia() // Use the useMedia hook
+  const cardsPerView = isMobileView ? 1 : 3
+  const totalGroups = Math.ceil((games?.length || 0) / cardsPerView)
 
   const startAutoplay = useCallback(() => {
     if (autoplayTimerRef.current) {
@@ -193,7 +196,7 @@ const TopEvents: React.FC = () => {
             >
               {
                 games?.map((game, index) => (
-                  <div key={game.gameId} className="w-1/3 flex-shrink-0 px-2">
+                  <div key={game.gameId} className={`${isMobileView ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2`}>
                     <Card game={game} />
                   </div>
                 ))
