@@ -2,7 +2,7 @@
 
 .bannerWrapper {
   width: 100%;
-  height: 400px;
+  height: 300px;
   position: relative;
   overflow: hidden;
   border-radius: 0 0 0 1.25rem;
@@ -24,6 +24,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 
@@ -34,6 +35,16 @@
   &.next {
     opacity: 0;
   }
+}
+
+.slideLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .slideContent {
@@ -49,10 +60,14 @@
   max-width: 600px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, background-color 0.3s ease;
 
   &.transitioning {
     opacity: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
   @include mobile {
