@@ -59,13 +59,15 @@ const League: React.FC<LeagueProps> = ({ url, name, country, games, slug }) => {
   return (
     <Href
       to={url}
-      className={cx(
-        'flex items-center justify-between py-2 px-4 hover:text-grey-90',
-        {
-          'text-grey-60': !isActive,
-          'text-grey-90': isActive,
-        }
-      )}
+      className={
+        cx(
+          'flex items-center justify-between py-2 px-4 hover:text-grey-90',
+          {
+            'text-grey-60': !isActive,
+            'text-grey-90': isActive,
+          }
+        )
+      }
     >
       <div className="flex items-center overflow-hidden">
         <Flag className="mr-2 flex-none" country={country.slug} />
@@ -118,13 +120,15 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
     return (
       <Href
         to="/"
-        className={cx(
-          'group px-4 py-2 flex w-full items-center justify-between',
-          {
-            'text-grey-60 hover:text-brand-50': !isActive,
-            'text-brand-50': isActive,
-          }
-        )}
+        className={
+          cx(
+            'group px-4 py-2 flex w-full items-center justify-between',
+            {
+              'text-grey-60 hover:text-brand-50': !isActive,
+              'text-brand-50': isActive,
+            }
+          )
+        }
       >
         <div className="flex items-center">
           <Icon className="size-4 mr-2" name={icon} />
@@ -140,32 +144,38 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
       <div className={cx({ 'bg-bg-l1 rounded-md': isExpanded })}>
         <button
           onClick={onToggle}
-          className={cx(
-            'group px-4 py-2 flex w-full items-center justify-between',
-            {
-              'text-grey-60 hover:text-brand-50': !isExpanded && !isActive,
-              'text-brand-50': isExpanded || isActive,
-            }
-          )}
+          className={
+            cx(
+              'group px-4 py-2 flex w-full items-center justify-between',
+              {
+                'text-grey-60 hover:text-brand-50': !isExpanded && !isActive,
+                'text-brand-50': isExpanded || isActive,
+              }
+            )
+          }
         >
           <div className="flex items-center">
             <Icon className="size-4 mr-2" name={icon} />
             <Message className="text-caption-13" value={name} />
           </div>
-          {Boolean(isUnique || !leagues?.length) ? (
-            <div className="text-caption-12 min-w-4 text-center">{gamesCount || 0}</div>
-          ) : (
-            <Icon
-              className={cx('h-4 w-4', { 'rotate-180': isExpanded })}
-              name="interface/chevron_down"
-            />
-          )}
+          {
+            Boolean(isUnique || !leagues?.length) ? (
+              <div className="text-caption-12 min-w-4 text-center">{gamesCount || 0}</div>
+            ) : (
+              <Icon
+                className={cx('h-4 w-4', { 'rotate-180': isExpanded })}
+                name="interface/chevron_down"
+              />
+            )
+          }
         </button>
-        {Boolean(!isUnique && isExpanded && leagues) && (
-          leagues?.map((league) => (
-            <League key={`${league.country.slug}-${league.slug}`} {...league} />
-          ))
-        )}
+        {
+          Boolean(!isUnique && isExpanded && leagues) && (
+            leagues?.map((league) => (
+              <League key={`${league.country.slug}-${league.slug}`} {...league} />
+            ))
+          )
+        }
       </div>
     </div>
   )
@@ -195,6 +205,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       const sportGames = sport.countries.reduce((acc, country) =>
         acc + country.leagues.reduce((leagueAcc, league) =>
           leagueAcc + (league.games?.length || 0), 0), 0)
+
       return total + Math.min(sportGames, constants.topPageGamePerSportLimit)
     }, 0)
   }, [ navigation ])
@@ -216,15 +227,19 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       .sort((a, b) => {
         const aIndex = constants.sportsOrder.indexOf(a.slug)
         const bIndex = constants.sportsOrder.indexOf(b.slug)
+
         if (aIndex >= 0 && bIndex >= 0) {
           return aIndex - bIndex
         }
+
         if (aIndex < 0 && bIndex >= 0) {
           return 1
         }
+
         if (aIndex >= 0 && bIndex < 0) {
           return -1
         }
+
         return 0
       })
   }, [ navigation ])
@@ -243,25 +258,31 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
         isExpanded={false}
         onToggle={() => setExpandedSport(null)}
       />
-      {Object.values(CATEGORIES).map(category => {
-        const sportsInCategory = sortedSports.filter(sport => sport.category === category)
-        if (sportsInCategory.length === 0) {
-          return null
-        }
-        return (
-          <React.Fragment key={category}>
-            <h2 className="text-caption-13 font-semibold py-2 px-4">{category}</h2>
-            {sportsInCategory.map(sport => (
-              <Sport
-                key={sport.slug}
-                {...sport}
-                isExpanded={expandedSport === sport.slug}
-                onToggle={() => setExpandedSport(prev => prev === sport.slug ? null : sport.slug)}
-              />
-            ))}
-          </React.Fragment>
-        )
-      })}
+      {
+        Object.values(CATEGORIES).map(category => {
+          const sportsInCategory = sortedSports.filter(sport => sport.category === category)
+
+          if (sportsInCategory.length === 0) {
+            return null
+          }
+
+          return (
+            <React.Fragment key={category}>
+              <h2 className="text-caption-13 font-semibold py-2 px-4">{category}</h2>
+              {
+                sportsInCategory.map(sport => (
+                  <Sport
+                    key={sport.slug}
+                    {...sport}
+                    isExpanded={expandedSport === sport.slug}
+                    onToggle={() => setExpandedSport(prev => prev === sport.slug ? null : sport.slug)}
+                  />
+                ))
+              }
+            </React.Fragment>
+          )
+        })
+      }
     </div>
   )
 }

@@ -54,18 +54,20 @@ const Carrousel: React.FC = () => {
 
   return (
     <div className={styles.bannerWrapper}>
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`${styles.bannerSlide} ${index === currentSlide ? styles.active : ''}`}
-          style={{ backgroundImage: `url(${slide.image})` }}
-        >
-          <div className={`${styles.slideContent} ${isTransitioning ? styles.transitioning : ''}`}>
-            <h2 className={styles.slideTitle}>{slide.title}</h2>
-            <p className={styles.slideDescription}>{slide.description}</p>
+      {
+        slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`${styles.bannerSlide} ${index === currentSlide ? styles.active : ''}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className={`${styles.slideContent} ${isTransitioning ? styles.transitioning : ''}`}>
+              <h2 className={styles.slideTitle}>{slide.title}</h2>
+              <p className={styles.slideDescription}>{slide.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   )
 }

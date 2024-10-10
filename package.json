@@ -1,6 +1,6 @@
 {
-  "name": "pinwin-prod",
-  "version": "0.1",
+  "name": "sdk-example",
+  "version": "1.1.0",
   "engines": {
     "node": "=18.19.0"
   },
@@ -18,8 +18,8 @@
     "@apollo/client": "^3.11.1",
     "@azuro-org/dictionaries": "^3.0.16",
     "@azuro-org/sdk": "^5.2.11",
+    "@azuro-org/sdk-social-aa-connector": "^0.1.0",
     "@floating-ui/react-dom-interactions": "^0.13.3",
-    "@gatefi/js-sdk": "^0.20.0",
     "@glidejs/glide": "^3.6.2",
     "@headlessui/react": "1.7.19",
     "@headlessui/tailwindcss": "0.2.1",
@@ -28,7 +28,6 @@
     "@locmod/local-storage": "1.0.4",
     "@locmod/modal": "3.0.1",
     "axios": "^1.7.7",
-    "chart.js": "^4.4.4",
     "classnames": "^2.5.1",
     "cookies-next": "^4.2.1",
     "copy-to-clipboard": "^3.3.3",
@@ -38,15 +37,11 @@
     "next": "14.2.7",
     "postcss": "^8.4.40",
     "react": "^18",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
-    "react-feather": "^2.0.10",
-    "react-slick": "^0.30.2",
     "react-xmasonry": "^3.0.6",
     "recharts": "^2.12.7",
     "sass": "1.77.6",
     "sharp": "^0.33.5",
-    "slick-carousel": "^1.8.1",
     "viem": "^2.21.7",
     "wagmi": "^2.12.11"
   },

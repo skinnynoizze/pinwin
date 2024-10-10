@@ -88,13 +88,15 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
         <div className="text-center ds:text-heading-h3 mb:text-heading-h5 font-bold mt-4">{title}</div>
       </div>
 
-      {game.gameId && (
-        <OddsChart
-          gameId={game.gameId}
-          isLoading={isChartLoading}
-          setIsLoading={setIsChartLoading}
-        />
-      )}
+      {
+        game.gameId && (
+          <OddsChart
+            gameId={game.gameId}
+            isLoading={isChartLoading}
+            setIsLoading={setIsChartLoading}
+          />
+        )
+      }
     </div>
   )
 }

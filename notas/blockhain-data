@@ -1,0 +1,103 @@
+## Blockchain Data (Infura API)
+
+### Conditions
+
+In the Azuro protocol, each market presented on a Pool is called a Condition. Conditions are managed by data providers and contain information about the associated game, reinforcement, margin, bets, funds, odds, and potential payouts for each outcome.
+
+Example of pre-match Condition data by calling getCondition($conditionId) from the PrematchCore contract:
+
+```json
+{
+    "gameId": "1001000000001596805632",
+    // Potential payouts for each outcome of the Condition
+    "payouts": [
+      16363593377,
+      70744647
+    ],
+    // Used to calculate odds
+    "virtualFunds": [
+      438261514432,
+      452955905101
+    ],
+    "totalNetBets": 7581012910, // The total amount of net bets placed in the Condition
+    "reinforcement": 900000000000,
+    "fund": 907581012910, // totalNetBets + reinforcement
+    "margin": 5000000000, // 0.5%
+    "endsAt": 0, // Assuming this is what the 0 represents in your new data
+    "lastDepositId": 1099511636707, // The ID of the last deposit in the Liquidity Pool at the time of creating the Condition
+    "winningOutcomesCount": 1,
+    "state": 0, // Created
+    "oracle": "0xbcE8b135053C6B9665C09c23D1ef422c48d00Ab4", // Condition creator address
+    "isExpressForbidden": true // Assuming this is still true, as it wasn't specified in the new data
+}
+```
+
+## Core Contract Events
+
+### Event List
+
+1. ConditionCreated
+2. ConditionResolved
+3. ConditionStopped
+4. CreatedConditionMetadata
+5. Initialized
+6. MarginChanged
+7. NewBet
+8. NewBetMargin
+9. OddsChanged
+10. OwnershipTransferred
+11. ReinforcementChanged
+
+### Event Details
+
+#### 1. ConditionCreated
+- `gameId` (indexed uint256)
+- `conditionId` (indexed uint256)
+- `outcomes` (uint64[])
+
+#### 2. ConditionResolved
+- `conditionId` (indexed uint256)
+- `state` (uint8)
+- `winningOutcomes` (uint64[])
+- `lpProfit` (int128)
+
+#### 3. ConditionStopped
+- `conditionId` (indexed uint256)
+- `flag` (bool)
+
+#### 4. CreatedConditionMetadata
+- `conditionId` (indexed uint256)
+- `data` (bytes)
+
+#### 5. Initialized
+- `version` (uint8)
+
+#### 6. MarginChanged
+- `conditionId` (indexed uint256)
+- `newMargin` (uint64)
+
+#### 7. NewBet
+- `bettor` (indexed address)
+- `affiliate` (indexed address)
+- `conditionId` (indexed uint256)
+- `tokenId` (uint256)
+- `outcomeId` (uint64)
+- `amount` (uint128)
+- `odds` (uint256)
+- `funds` (uint128[])
+
+#### 8. NewBetMargin
+- `betId` (indexed uint256)
+- `margin` (uint256)
+
+#### 9. OddsChanged
+- `conditionId` (indexed uint256)
+- `newOdds` (uint256[])
+
+#### 10. OwnershipTransferred
+- `previousOwner` (indexed address)
+- `newOwner` (indexed address)
+
+#### 11. ReinforcementChanged
+- `conditionId` (indexed uint256)
+- `newReinforcement` (uint128)
