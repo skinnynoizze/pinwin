@@ -209,20 +209,22 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
     <div className="mt-4 mb-8 p-4 border-t border-b border-grey-10 rounded-none">
       <div className="flex flex-row items-center mb-6 relative">
         {/* Desktop and medium layout */}
-        <div className="hidden ds:block flex-grow"></div>
+        <div className="hidden ds:block flex-grow" />
         <h3 className="text-lg font-bold mb-0 ds:absolute ds:left-1/2 ds:transform ds:-translate-x-1/2">On-Chain Analytics</h3>
         <div className="flex-grow flex justify-end">
           <select
             className="bg-bg-l2 text-white border border-grey-20 rounded-min px-3 py-2 text-caption-14 font-medium appearance-none cursor-pointer hover:bg-bg-l3 focus:outline-none focus:ring-2 focus:ring-brand-50"
             value={displayMode}
             onChange={(e) => setDisplayMode(e.target.value as 'odds' | 'percentage')}
-            style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'%23999999\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'right 0.5rem center',
-              backgroundSize: '1.5em 1.5em',
-              paddingRight: '2.5rem',
-            }}
+            style={
+              {
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'%23999999\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'right 0.5rem center',
+                backgroundSize: '1.5em 1.5em',
+                paddingRight: '2.5rem',
+              }
+            }
           >
             <option value="odds">Odds</option>
             <option value="percentage">Percentage</option>
