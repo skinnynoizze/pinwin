@@ -44,6 +44,17 @@ The project follows a typical Next.js structure with some custom organization:
 - Uses a combination of React hooks and context for state management
 - Utilizes @azuro-org/sdk hooks for fetching and managing betting data
 
+## Azuro SDK
+The Azuro SDK is written in TypeScript and is designed for React apps.
+it provides a variety of hooks and utilities to simplify the development of betting dApps including handling betting logic, live updates, and user interactions.
+The SDK uses React, TypeScript, GraphQL, and integrates with the Azuro Protocol's APIs and smart contracts.
+It helps developers cerate fully customizable betting applications without worriying about comples backend setups.
+
+## Azuro toolkit
+Written in Typescript. Includes utilities, constants, and Apollo GraphQL support for interacting with Azuro's contracts.
+The tech stack involves npm packages such as @apolloc/client, @axuo-org/dictionaries, viem and @wagmi/core
+The toolkit provides helpers like setup functions, odds calculation, live betting support, and itegration for Debridge corss-chain betting.
+It also supports querying contract data through ABIs and GraphQL fragments.
 
 ## Project Requirements
 1. Clone the repository containing the main UI template and familiarize yourself with the tech stack (Next.jz, Wagmi, etc.) and project structure.
@@ -57,8 +68,11 @@ Feel free to add new elements, such as a placeholder for promotional banners - y
 3. Add the required feature Please implement the historical price chart in addition to your own ideas.
 A historical price chart should reflect the market dynamics for prediction markets (see description and example in Azuro Materials below)
 
-Historical price chart that reflects the market dynamics:
-Fetch historical odds / prices for each pre-match event and display their dynamic change month over month in the form of an interactive diagram. The x-axis should represent time, with a monthly breakdown, and the y-axis should display the price or odds. Allow users to hover over specific points on the chart to see exact odds/price and timestamp for that moment.
+Bonus feature: Historical price chart that reflects market dynamics
+Fetch historical odds / prices for each pre-match event and display their dynamic change over time in the form of an interactive diagram.
+Transform Azuro’s AMM data into a historical line chart format
+The chart’s x-axis to denote the time period, while the y-axis denotes odds (in form of percentages). Users should be able to select shorter/longer time periods — the chart will zoom in/out (i.e., zooming in to view daily odds and zooming out to view monthly odds).
+Chart should display the exact percentage odds and timestamp when hovering on a specific point
 
 Example:
 ![alt text](image-example-chart.png)
@@ -106,6 +120,9 @@ make sure your creative choices are motivated by the potential user persona or u
 - Easy bridge & swap from any chain to our supported chains using a 3rd party bridge.
 - Filter by Countrys, Sports, Leagues, etc.
 - Sports API for fetchin info about matches: resultados ultimos encuentros, posicion en la tabla, lesionades o bajas de cada equipo.
+- Show the best outcomes to engage users looking for maximun return profit (also riskier bets)
+- Show live wins: Show the best winners of the day or last days to show people how much you can win
+
 
 ## Faucets testnet
 USDT Faucet

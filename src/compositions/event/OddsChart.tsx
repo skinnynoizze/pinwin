@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import type { TooltipProps } from 'recharts'
 
 // Define more specific types
 type OddsDataPoint = {
@@ -25,10 +26,15 @@ type OddsChartProps = {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const formatDate = (dateString: string): string => {
+type TooltipFormatter = (value: number, name: string, props: { payload: ChartDataPoint }) => [string, string];
+
+// Use the TooltipProps from recharts
+type CustomTooltipProps = TooltipProps<number, string>;
+
+const formatDate = (dateString: string | number): string => {
   const date = new Date(dateString)
 
-  return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`
+  return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })} ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
 }
 
 const formatOdds = (value: string | number): string => {
@@ -43,6 +49,7 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
   const [ chartData, setChartData ] = useState<ChartDataPoint[]>([])
   const [ error, setError ] = useState<string | null>(null)
   const [ candidates, setCandidates ] = useState<string[]>([])
+  const [ displayMode, setDisplayMode ] = useState<'odds' | 'percentage'>('odds')
 
   const formatXAxis = (tickItem: string): string => {
     const date = new Date(tickItem)
@@ -72,12 +79,24 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
     return ticks
   }
 
-  const formatTooltipValue = (value: number | string): string => {
-    if (typeof value === 'number') {
-      return value.toFixed(3)
+  const convertToPercentage = (odds: number): number => {
+    return (1 / odds) * 100
+  }
+
+  const formatYAxis = (value: number): string => {
+    if (displayMode === 'percentage') {
+      return `${value.toFixed(1)}%`
     }
 
-    return 'N/A'
+    return value.toFixed(3)
+  }
+
+  const formatTooltipValue = (value: number, name: string, props: CustomTooltipProps): [string, string] => {
+    const formattedValue = displayMode === 'percentage'
+      ? `${value.toFixed(1)}%`
+      : value.toFixed(3)
+
+    return [ formattedValue, name ]
   }
 
   useEffect(() => {
@@ -121,6 +140,63 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
     fetchOddsData()
   }, [ gameId, setIsLoading ])
 
+  const extendedChartData = useMemo(() => {
+    if (chartData.length === 0) {
+      return []
+    }
+
+    const today = new Date().toISOString().split('T')[0]
+
+    return [
+      ...chartData,
+      ...(chartData[chartData.length - 1].date !== today
+        ? [ {
+          date: today,
+          [candidates[0]]: null,
+          [candidates[1]]: null,
+        } ]
+        : []),
+    ]
+  }, [ chartData, candidates ])
+
+  const dynamicTicks = useMemo(() => {
+    return generateDynamicTicks(extendedChartData, 6)
+  }, [ extendedChartData ])
+
+  const processedChartData = useMemo(() => {
+    return extendedChartData.map(dataPoint => ({
+      ...dataPoint,
+      [candidates[0]]: dataPoint[candidates[0]] !== null
+        ? (displayMode === 'percentage'
+          ? convertToPercentage(dataPoint[candidates[0]] as number)
+          : dataPoint[candidates[0]])
+        : null,
+      [candidates[1]]: dataPoint[candidates[1]] !== null
+        ? (displayMode === 'percentage'
+          ? convertToPercentage(dataPoint[candidates[1]] as number)
+          : dataPoint[candidates[1]])
+        : null,
+    }))
+  }, [ extendedChartData, candidates, displayMode ])
+
+  const yAxisDomain = useMemo(() => {
+    if (displayMode === 'odds') {
+      return [ 'auto', 'auto' ]
+    }
+
+    const allValues = processedChartData.flatMap(dataPoint =>
+      candidates.map(candidate => dataPoint[candidate])
+    ).filter((value): value is number => value !== null)
+
+    const minValue = Math.floor(Math.min(...allValues))
+    const maxValue = Math.ceil(Math.max(...allValues))
+
+    // Add some padding to the domain
+    const padding = (maxValue - minValue) * 0.1
+
+    return [ Math.max(0, minValue - padding), Math.min(100, maxValue + padding) ]
+  }, [ processedChartData, candidates, displayMode ])
+
   if (isLoading) {
     return <div className="mt-4 p-4 border border-grey-10 rounded">Loading odds data...</div>
   }
@@ -129,26 +205,31 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
     return null
   }
 
-  const today = new Date().toISOString().split('T')[0]
-  const extendedChartData: ChartDataPoint[] = [
-    ...chartData,
-    ...(chartData[chartData.length - 1].date !== today
-      ? [ {
-        date: today,
-        [candidates[0]]: null,
-        [candidates[1]]: null,
-      } ]
-      : []),
-  ]
-
-  const dynamicTicks = generateDynamicTicks(extendedChartData, 6)
-
   return (
     <div className="mt-4 mb-8 p-4 border-t border-b border-grey-10 rounded-none">
-      <h3 className="text-lg font-bold mb-6 text-center">On-Chain Analytics</h3>
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-lg font-bold">On-Chain Analytics</h3>
+        <select
+          className="bg-bg-l2 text-white border border-grey-20 rounded-min px-3 py-2 text-caption-14 font-medium appearance-none cursor-pointer hover:bg-bg-l3 focus:outline-none focus:ring-2 focus:ring-brand-50"
+          value={displayMode}
+          onChange={(e) => setDisplayMode(e.target.value as 'odds' | 'percentage')}
+          style={
+            {
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'%23999999\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right 0.5rem center',
+              backgroundSize: '1.5em 1.5em',
+              paddingRight: '2.5rem',
+            }
+          }
+        >
+          <option value="odds">Odds</option>
+          <option value="percentage">Percentage</option>
+        </select>
+      </div>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
-          data={extendedChartData}
+          data={processedChartData}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -164,20 +245,20 @@ const OddsChart: React.FC<OddsChartProps> = ({ gameId, isLoading, setIsLoading }
             ticks={dynamicTicks}
           />
           <YAxis
-            domain={[ 'auto', 'auto' ]}
+            domain={yAxisDomain}
             tick={{ fill: '#fff' }}
             axisLine={false}
             tickSize={0}
             dx={-10}
             width={50}
             className="text-caption-12"
-            tickFormatter={(value: number) => value.toFixed(3)}
+            tickFormatter={formatYAxis}
           />
           <Tooltip
             contentStyle={{ backgroundColor: '#1F1F1F', border: 'none' }}
             itemStyle={{ color: '#fff' }}
             labelStyle={{ color: '#fff' }}
-            labelFormatter={(label: string) => formatDate(label)}
+            labelFormatter={(label) => formatDate(label)}
             formatter={formatTooltipValue}
           />
           <Legend
