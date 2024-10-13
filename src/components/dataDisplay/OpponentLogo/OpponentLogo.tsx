@@ -21,8 +21,8 @@ type OpponentLogoProps = {
 const OpponentLogo: React.FC<OpponentLogoProps> = ({ className, image, size = 28, bgColor = 'grey-20' }) => {
   const rootClassName = cx(
     'flex items-center justify-center flex-none rounded-full overflow-hidden', // Ensure overflow is hidden
-    `bg-${bgColor}`, 
-    className, 
+    `bg-${bgColor}`,
+    className,
     {
       'size-8 p-1': size === 28,
       'size-16 p-1': size === 48,

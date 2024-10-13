@@ -39,7 +39,7 @@ const Content: React.FC<React.PropsWithChildren> = ({ children }) => {
           mobile
           wide
         >
-          <Carrousel />
+          <Carrousel isSidebarExpanded={isRightSidebarExpanded} /> {/* Pass the sidebar state */}
         </Media>
         <div className="flex flex-col bg-bg-l1 border border-grey-10 wd:rounded-l-md -wd:rounded-t-md px-2 min-h-[calc(100vh_-_4.5rem)] w-full">
           {children}

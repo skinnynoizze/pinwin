@@ -11,7 +11,11 @@ interface SlideData {
   link: string
 }
 
-const Carrousel: React.FC = () => {
+interface CarrouselProps {
+  isSidebarExpanded: boolean // Accept the sidebar state
+}
+
+const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
   const [ currentSlide, setCurrentSlide ] = useState(0)
   const [ isTransitioning, setIsTransitioning ] = useState(false)
 
@@ -37,7 +41,7 @@ const Carrousel: React.FC = () => {
       description: 'Waddle your way to crypto riches with PinWin!',
       link: '',
     },
-/*     {
+    /*     {
       image: '/images/carrousel/carrousel03.png',
       alt: '',
       title: 'Ice, Ice, Baby... It\'s Winning Time!',
@@ -66,7 +70,7 @@ const Carrousel: React.FC = () => {
   }, [ slides.length ])
 
   return (
-    <div className={styles.bannerWrapper}>
+    <div className={styles.bannerWrapper} style={{ height: isSidebarExpanded ? '300px' : '400px' }}> {/* Adjust height based on sidebar state */}
       {
         slides.map((slide, index) => (
           <div
