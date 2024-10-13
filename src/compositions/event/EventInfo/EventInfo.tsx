@@ -5,15 +5,15 @@ import { getGameDateTime } from 'helpers/getters'
 import { getParticipantImage } from 'helpers/getParticipantImage'
 import { Icon, LiveLabel, type IconName } from 'components/ui'
 import { Flag, OpponentLogo } from 'components/dataDisplay'
-
+// import headToHeadData from 'src/data/head2head.json'
 import messages from './messages'
 import OddsChart from '../OddsChart'
 
 
 type TitleProps = {
-  status: GameStatus
-  startsAt: string
-}
+  status: GameStatus;
+  startsAt: string;
+};
 
 const Title: React.FC<TitleProps> = ({ status, startsAt }) => {
   const { date, time } = getGameDateTime(+startsAt * 1000)
@@ -35,9 +35,7 @@ const Title: React.FC<TitleProps> = ({ status, startsAt }) => {
   }
 
   if (status === GameStatus.Live) {
-    content = (
-      <LiveLabel />
-    )
+    content = <LiveLabel />
   }
 
   return (
@@ -48,28 +46,27 @@ const Title: React.FC<TitleProps> = ({ status, startsAt }) => {
 }
 
 type EventInfoProps = {
-  game: GameQuery['games'][0]
-  status: GameStatus
-}
+  game: GameQuery['games'][0];
+  status: GameStatus;
+};
 
 const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
   const [ isChartLoading, setIsChartLoading ] = useState(false)
-
   const {
-    sport: {
-      slug: sportSlug,
-    },
+    sport: { slug: sportSlug },
     startsAt,
     participants,
     title,
     league: {
       name: leagueName,
-      country: {
-        slug: countrySlug,
-        name: countryName,
-      },
+      country: { slug: countrySlug, name: countryName },
     },
   } = game
+
+  // Extract head-to-head data
+  // const headToHeadMatches = headToHeadData.response
+  //   .sort((a, b) => new Date(b.fixture.date).getTime() - new Date(a.fixture.date).getTime()) // Sort by date descending
+  //   .slice(0, 5) // Get the most recent 5 matches
 
   return (
     <div className="-mx-2">
@@ -98,6 +95,35 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
           />
         )
       }
+
+      {/* Display Head-to-Head Data in a Table */}
+      {/* <div className="mt-4">
+        <h3 className="text-lg font-bold">Head-to-Head</h3>
+        <table className="min-w-full bg-bg-l2 border border-grey-10 mt-2">
+          <thead>
+            <tr className="bg-grey-15 text-white">
+              <th className="py-2 px-4 text-left">Match Details</th>
+              <th className="py-2 px-4 text-left">Date</th>
+              <th className="py-2 px-4 text-left">Round</th>
+              <th className="py-2 px-4 text-left">Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              headToHeadMatches.map((match, index) => (
+                <tr key={index} className="border-b border-grey-10">
+                  <td className="py-2 px-4 text-left">
+                    {match.teams.home.name} - {match.goals.home} - {match.goals.away} - {match.teams.away.name}
+                  </td>
+                  <td className="py-2 px-4 text-left">{new Date(match.fixture.date).toLocaleDateString()}</td>
+                  <td className="py-2 px-4 text-left">{match.league.round}</td>
+                  <td className="py-2 px-4 text-left">{match.league.season}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div> */}
     </div>
   )
 }

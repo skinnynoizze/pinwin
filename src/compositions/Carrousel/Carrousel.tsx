@@ -21,7 +21,7 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
 
   const slides: SlideData[] = [
     {
-      image: '/images/carrousel/1.png',
+      image: '/images/carrousel/3.png',
       alt: '',
       title: 'Who Will Rule the Ice?',
       description: 'Glide into the prediction market and let your political picks soar!',
@@ -32,20 +32,22 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
       alt: '',
       title: 'Freeze Your Competition!',
       description: 'Our odds are so good, they\'ll give you chills!',
-      link: '',
+      link: '/football',
     },
     {
-      image: '/images/carrousel/3.png',
+      image: '/images/carrousel/1.png',
       alt: '',
-      title: 'Cool Deals to Chill Your Wallet',
-      description: 'Waddle your way to crypto riches with PinWin!',
+      title: 'Ice, Ice, Baby... It\'s Winning Time!',
+      description: 'Slide into victory with our frosty selection of games',
       link: '',
     },
     /*     {
       image: '/images/carrousel/carrousel03.png',
       alt: '',
-      title: 'Ice, Ice, Baby... It\'s Winning Time!',
+
+      title: 'Cool Deals to Chill Your Wallet',
       description: 'Slide into victory with our frosty selection of games',
+      description: 'Waddle your way to crypto riches with PinWin!',
       link: '',
     },
     {
@@ -75,8 +77,7 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
         slides.map((slide, index) => (
           <div
             key={index}
-            className={`${styles.bannerSlide} ${index === currentSlide ? styles.active : ''}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
+            className={`${styles.bannerSlide} ${index === currentSlide ? styles.active : ''} ${styles[`slide${index + 1}`]}`}
           >
             <Link href={slide.link} className={styles.slideLink}>
               <div className={`${styles.slideContent} ${isTransitioning ? styles.transitioning : ''}`}>

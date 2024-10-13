@@ -3,6 +3,7 @@
 .bannerWrapper {
   width: 100%;
   height: 400px;
+  max-height: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 0 0 0 1.25rem;
@@ -14,6 +15,7 @@
 
   @include narrow {
     height: 300px;
+    max-height: 300px;
   }
 }
 
@@ -35,6 +37,32 @@
 
   &.next {
     opacity: 0;
+  }
+
+  // Mobile styles
+  @include mobile {
+    &.slide1 {
+      background-image: url('/images/carrousel/mobile/3.png');
+    }
+    &.slide2 {
+      background-image: url('/images/carrousel/mobile/2.png');
+    }
+    &.slide3 {
+      background-image: url('/images/carrousel/mobile/1.png');
+    }
+  }
+
+  // Desktop styles
+  @include desktop {
+    &.slide1 {
+      background-image: url('/images/carrousel/3.png');
+    }
+    &.slide2 {
+      background-image: url('/images/carrousel/2.png');
+    }
+    &.slide3 {
+      background-image: url('/images/carrousel/1.png');
+    }
   }
 }
 
