@@ -17,27 +17,27 @@ const Carrousel: React.FC = () => {
 
   const slides: SlideData[] = [
     {
-      image: '/images/carrousel/usa-elections.jpg',
+      image: '/images/carrousel/1.png',
       alt: '',
       title: 'Who Will Rule the Ice?',
       description: 'Glide into the prediction market and let your political picks soar!',
       link: '/politics/international-tournaments/2024-presidential-election-usa/1001000000001596805632',
     },
     {
-      image: '/images/carrousel/carrousel05.png',
+      image: '/images/carrousel/2.png',
       alt: '',
       title: 'Freeze Your Competition!',
       description: 'Our odds are so good, they\'ll give you chills!',
       link: '',
     },
     {
-      image: '/images/carrousel/carrousel02.png',
+      image: '/images/carrousel/3.png',
       alt: '',
       title: 'Cool Deals to Chill Your Wallet',
       description: 'Waddle your way to crypto riches with PinWin!',
       link: '',
     },
-    {
+/*     {
       image: '/images/carrousel/carrousel03.png',
       alt: '',
       title: 'Ice, Ice, Baby... It\'s Winning Time!',
@@ -50,7 +50,7 @@ const Carrousel: React.FC = () => {
       title: 'Experience the Thrill of Winning',
       description: 'Where winning is just the tip of the iceberg!',
       link: '',
-    },
+    }, */
   ]
 
   useEffect(() => {

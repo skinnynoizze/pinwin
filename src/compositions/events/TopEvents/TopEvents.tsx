@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation'
 import { useActiveMarkets, useGames } from '@azuro-org/sdk'
 import { Game_OrderBy, type GamesQuery, GameStatus } from '@azuro-org/toolkit'
 import cx from 'classnames'
+import { getParticipantImage } from 'helpers/getParticipantImage' // Import the utility function
 import { getGameDateTime } from 'helpers/getters'
 import { useMedia } from 'contexts'
 
@@ -64,13 +65,13 @@ const Card: React.FC<CardProps> = React.memo(({ game }) => {
           <div className="size-[2px] rounded-full bg-grey-20 mx-1" />
           <span className="text-ellipsis whitespace-nowrap overflow-hidden">{leagueName}</span>
         </Href>
-        <div className="mt-3 flex items-center justify-between px-7">
-          <OpponentLogo image={participants[0].image} size={48} />
+        <div className="mt-3 flex items-center justify-between px-4">
+          <OpponentLogo image={getParticipantImage(participants[0]?.name || '', participants[0]?.image || '')} size={48} />
           <div className="text-caption-12 text-center">
             <div className="text-grey-60">{date}</div>
             <div className="font-semibold mt-[2px]">{time}</div>
           </div>
-          <OpponentLogo image={participants[1].image} size={48} />
+          <OpponentLogo image={getParticipantImage(participants[1]?.name || '', participants[1]?.image || '')} size={48} />
         </div>
         <div className="mt-5 text-caption-13 font-semibold text-center text-ellipsis whitespace-nowrap overflow-hidden">{title}</div>
         <div className="mt-3 flex items-center space-x-2">

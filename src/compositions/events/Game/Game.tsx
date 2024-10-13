@@ -7,6 +7,7 @@ import { useGameStatus, useLive } from '@azuro-org/sdk'
 import { GameStatus } from '@azuro-org/toolkit'
 import { useEntryListener } from '@locmod/intersection-observer'
 import { getGameDateTime } from 'helpers/getters'
+import { getParticipantImage } from 'helpers/getParticipantImage'
 
 import { OpponentLogo } from 'components/dataDisplay'
 import { Href } from 'components/navigation'
@@ -98,7 +99,11 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
             <>
               {
                 participants.map(({ name, image }, index) => (
-                  <OpponentLogo className={cx({ '-mt-2': !index, '-mb-2 -ml-2 z-20': !!index })} key={name} image={image} />
+                  <OpponentLogo
+                    className={cx({ '-mt-2': !index, '-mb-2 -ml-2 z-20': !!index })}
+                    key={name}
+                    image={image ? getParticipantImage(name, image) : undefined}
+                  />
                 ))
               }
             </>
