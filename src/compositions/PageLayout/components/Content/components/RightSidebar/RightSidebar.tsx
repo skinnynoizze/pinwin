@@ -27,7 +27,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
   }
 
   const desktopContent = (
-    <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'w-[316px]' : 'w-12'}`}>
+    <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'w-[316px]' : 'w-0'}`}>
       <div className="h-full relative">
         <button
           onClick={toggleSidebar}
