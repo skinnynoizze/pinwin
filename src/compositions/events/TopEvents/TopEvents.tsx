@@ -27,7 +27,7 @@ type CardProps = {
   game: GamesQuery['games'][0]
 }
 
-const Card: React.FC<CardProps> = ({ game }) => {
+const Card: React.FC<CardProps> = React.memo(({ game }) => {
   const {
     sport: {
       slug: sportSlug,
@@ -91,7 +91,7 @@ const Card: React.FC<CardProps> = ({ game }) => {
       </div>
     </div>
   )
-}
+})
 
 const sliderConfiguration = {
   gap: 8,
@@ -132,7 +132,7 @@ const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
     }, 5000)
   }, [ totalGroups ])
 
-  const moveCarousel = (direction: 'next' | 'prev') => {
+  const moveCarousel = useCallback((direction: 'next' | 'prev') => {
     setCurrentIndex(prevIndex => {
       if (direction === 'next') {
         return (prevIndex + 1) % totalGroups
@@ -142,7 +142,7 @@ const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
       }
     })
     startAutoplay() // Restart autoplay after manual navigation
-  }
+  }, [ totalGroups, startAutoplay ]) // Added dependencies
 
   useEffect(() => {
     startAutoplay()
