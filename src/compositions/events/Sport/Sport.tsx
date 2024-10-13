@@ -4,6 +4,7 @@ import React from 'react'
 import { type Sport } from 'hooks'
 import { Message } from '@locmod/intl'
 
+import Link from 'next/link'
 import { Icon, type IconName } from 'components/ui'
 import { Href } from 'components/navigation'
 import messages from './messages'
@@ -32,7 +33,7 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
   const { slug, name } = sport
 
   return (
-    <div>
+    <div className="ds:py-2 nr:py-2 mb:py-1">
       <div className="flex items-center justify-between py-3 px-4">
         {
           isPage ? (
@@ -40,7 +41,7 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
           ) : (
             <div className="flex items-center">
               <Icon className="size-6 mr-3 text-brand-50" name={`sport/${slug}` as IconName} />
-              <div className="text-heading-h4 font-semibold">{name}</div>
+              <Link href={`/${slug}`} className="text-heading-h4 font-semibold hover:underline">{name}</Link>
             </div>
           )
         }

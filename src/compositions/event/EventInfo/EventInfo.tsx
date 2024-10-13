@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { type GameQuery, GameStatus } from '@azuro-org/toolkit'
 import { Message } from '@locmod/intl'
 import { getGameDateTime } from 'helpers/getters'
+import { getParticipantImage } from 'helpers/getParticipantImage'
 import { Icon, LiveLabel, type IconName } from 'components/ui'
 import { Flag, OpponentLogo } from 'components/dataDisplay'
 
@@ -81,9 +82,9 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
       </div>
       <div className="ds:py-8 mb:py-4 w-full mb:px-9">
         <div className="relative flex items-center ds:justify-around mb:justify-center ds:max-w-[50%] mx-auto">
-          <OpponentLogo className="mb:absolute mb:left-0 mb:top-0" image={participants[0].image} size={48} />
+          <OpponentLogo className="mb:absolute mb:left-0 mb:top-0" image={getParticipantImage(participants[0].name)} size={48} />
           <Title status={status} startsAt={startsAt} />
-          <OpponentLogo className="mb:absolute mb:right-0 mb:top-0" image={participants[1].image} size={48} />
+          <OpponentLogo className="mb:absolute mb:right-0 mb:top-0" image={getParticipantImage(participants[1].name)} size={48} />
         </div>
         <div className="text-center ds:text-heading-h3 mb:text-heading-h5 font-bold mt-4">{title}</div>
       </div>
