@@ -10,6 +10,7 @@ import Navbar, { NavbarSkeleton } from 'compositions/events/Navbar/Navbar'
 import FilteredLeagues from 'compositions/events/FilteredLeagues/FilteredLeagues'
 import { GameSkeleton } from 'compositions/events/Game/Game'
 import UniqueEvents from 'compositions/events/UniqueEvents/UniqueEvents'
+import TopEvents from 'compositions/events/TopEvents/TopEvents'
 
 
 export default function SportPage() {
@@ -44,6 +45,7 @@ export default function SportPage() {
 
   return (
     <Navbar>
+      <TopEvents sportSlug={slug} />
       <Sport sport={sport} isPage>
         {
           isUnique ? (

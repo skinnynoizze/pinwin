@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef, useState, useContext, useCallback } from 'react'
+import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { Message } from '@locmod/intl'
 import { useParams } from 'next/navigation'
 import { useActiveMarkets, useGames } from '@azuro-org/sdk'
 import { Game_OrderBy, type GamesQuery, GameStatus } from '@azuro-org/toolkit'
 import cx from 'classnames'
 import { getGameDateTime } from 'helpers/getters'
-import { useMedia } from 'contexts' // Add this import
+import { useMedia } from 'contexts'
 
 import { Icon, type IconName } from 'components/ui'
 import { OpponentLogo } from 'components/dataDisplay'
@@ -107,16 +107,19 @@ const sliderConfiguration = {
   },
 }
 
-const TopEvents: React.FC = () => {
+type TopEventsProps = {
+  sportSlug?: string;
+};
+
+const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
   const params = useParams()
-  const sport = messages[params.sportSlug as string]
   const { games, loading } = useGames({
-    filter: { limit: 9 },
+    filter: { limit: 9, ...(sportSlug ? { sportSlug } : {}) }, // Only apply sportSlug filter if it exists
     orderBy: Game_OrderBy.Turnover,
   })
   const [ currentIndex, setCurrentIndex ] = useState(0)
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const { isMobileView } = useMedia() // Use the useMedia hook
+  const { isMobileView } = useMedia()
   const cardsPerView = isMobileView ? 1 : 3
   const totalGroups = Math.ceil((games?.length || 0) / cardsPerView)
 
@@ -159,9 +162,9 @@ const TopEvents: React.FC = () => {
           <h1 className="text-heading-h1 font-bold">
             <Message className="text-brand-50" value={messages.top} />
             {
-              Boolean(sport) && (
-                <Message className="ml-2" value={sport} />
-              )
+              sportSlug && messages[sportSlug] ? ( // Check if sportSlug is defined and exists in messages
+                <Message className="ml-2" value={messages[sportSlug]} />
+              ) : null
             }
             <Message className="ml-2" value={messages.events} />
           </h1>
