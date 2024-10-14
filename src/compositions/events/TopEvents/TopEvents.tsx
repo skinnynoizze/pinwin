@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { Message } from '@locmod/intl'
 import { useParams } from 'next/navigation'
 import { useActiveMarkets, useGames } from '@azuro-org/sdk'
@@ -115,14 +115,36 @@ type TopEventsProps = {
 const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
   const params = useParams()
   const { games, loading } = useGames({
-    filter: { limit: 9, ...(sportSlug ? { sportSlug } : {}) }, // Only apply sportSlug filter if it exists
+    filter: { limit: 21, ...(sportSlug ? { sportSlug } : {}) }, // Only apply sportSlug filter if it exists
     orderBy: Game_OrderBy.Turnover,
   })
+
+  // Filter games to ensure only one game per league only if sportSlug is not provided
+  const uniqueGames = useMemo(() => {
+    if (!sportSlug) {
+      const seenLeagues = new Set()
+
+      return games?.filter(game => {
+        const leagueSlug = game.league.slug // Assuming league.slug is the unique identifier for leagues
+
+        if (!seenLeagues.has(leagueSlug)) {
+          seenLeagues.add(leagueSlug)
+
+          return true // Include this game
+        }
+
+        return false // Exclude this game
+      }) || []
+    }
+
+    return games || [] // Return all games if sportSlug is provided
+  }, [ games, sportSlug ])
+
   const [ currentIndex, setCurrentIndex ] = useState(0)
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null)
   const { isMobileView } = useMedia()
   const cardsPerView = isMobileView ? 1 : 3
-  const totalGroups = Math.ceil((games?.length || 0) / cardsPerView)
+  const totalGroups = Math.ceil((uniqueGames.length || 0) / cardsPerView) // Use uniqueGames for total groups
 
   const startAutoplay = useCallback(() => {
     if (autoplayTimerRef.current) {
@@ -199,7 +221,7 @@ const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {
-                games?.map((game, index) => (
+                uniqueGames.map((game, index) => ( // Use uniqueGames here
                   <div key={game.gameId} className={`${isMobileView ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2`}>
                     <Card game={game} />
                   </div>

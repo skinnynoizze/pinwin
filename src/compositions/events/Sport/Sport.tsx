@@ -47,7 +47,7 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
         }
         {
           !isPage && (
-            <Href to={`/${slug}`} className="bg-grey-10 rounded-full text-grey-60 hover:text-grey-90 border border-bg-l2 size-6 flex items-center justify-center">
+            <Href to={`/${slug}`} className="bg-grey-10 rounded-full text-grey-60 hover:text-brand-50 border border-bg-l2 size-6 flex items-center justify-center">
               <Icon className="size-4" name="interface/chevron_right" />
             </Href>
           )

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { Icon } from '@iconify/react'
 
 import LogoPinwin from 'components/ui/Logo/LogoPinwin'
 import Navigation from 'compositions/Navigation/Navigation'
@@ -12,6 +13,14 @@ const LeftSidebar: React.FC = () => {
     <div className="h-full flex flex-col">
       <div className="px-4 py-5 sticky top-0">
         <LogoPinwin className="w-full h-auto" variant="lateral" />
+        <div className="flex justify-center space-x-4 mt-2">
+          <a href="https://x.com/pinwinxyz" target="_blank" rel="noopener noreferrer">
+            <Icon icon="line-md:twitter-x" className="text-xl hover:text-brand-50 transition-colors" />
+          </a>
+          <a href="https://discord.com/invite/pinwinxyz" target="_blank" rel="noopener noreferrer">
+            <Icon icon="line-md:discord" className="text-xl hover:text-brand-50 transition-colors" />
+          </a>
+        </div>
       </div>
       <div className="overflow-auto flex-grow no-scrollbar">
         <LiveSwitcher />
