@@ -32,7 +32,7 @@ const Navbar: React.CFC = ({ children }) => {
   const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
-  const className = cx('sticky mb:top-[60px] nr:top-[40px] ds:top-0 z-20 px-6 pt-6 pb-1 mb:items-center mb:flex-col border-b border-b-grey-10 flex justify-between bg-bg-l1', {
+  const className = cx('sticky mb:top-[50px] nr:top-[40px] ds:top-0 z-20 px-6 pt-6 mb:pt-3 pb-1 mb:items-center mb:flex-col border-b border-b-grey-10 flex justify-between bg-bg-l1', {
     'py-3': !isTimeFilterVisible,
   })
 
@@ -46,7 +46,7 @@ const Navbar: React.CFC = ({ children }) => {
         <div className="flex items-center space-x-2 ds:flex-row">
           {
             isTimeFilterVisible && (
-              <TimeFilter className="ds:h-10 nr:h-10 mb:h-10" />
+              <TimeFilter className="ds:h-10 nr:h-10 mb:h-8" />
             )
           }
           <ChangeOddsView />
