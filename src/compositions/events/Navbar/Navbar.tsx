@@ -5,7 +5,6 @@ import React from 'react'
 import { Message } from '@locmod/intl'
 import { useLive } from '@azuro-org/sdk'
 import cx from 'classnames'
-import Link from 'next/link' // Import Link from next/link
 
 import { Icon, type IconName } from 'components/ui'
 import TimeFilter, { FilterByTimeProvider } from 'compositions/events/TimeFilter/TimeFilter'
@@ -30,47 +29,24 @@ const Navbar: React.CFC = ({ children }) => {
   const params = useParams()
 
   const sportSlug = params.sportSlug as string || 'top'
-  const countrySlug = params.countrySlug as string
   const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
-  const className = cx(
-    'border-b border-b-grey-10 -mx-2 ds:px-6 mb:px-2 flex mb:flex-col ds:flex-row items-center justify-between sticky z-20 bg-bg-l1 rounded-t-lg overflow-hidden',
-    {
-      'py-3 mb:py-0': !isTimeFilterVisible,
-      'ds:py-[4.5px] mb:py-0': isTimeFilterVisible,
-      'top-0': isLive,
-      'mb:top-[45px] nr:top-[45px] ds:top-0': !isLive,
-    }
-  )
+  const className = cx('sticky mb:top-[60px] nr:top-[40px] ds:top-0 z-20 px-6 pt-6 pb-1 mb:items-center mb:flex-col border-b border-b-grey-10 flex justify-between bg-bg-l1', {
+    'py-3': !isTimeFilterVisible,
+  })
 
   return (
     <FilterByTimeProvider>
       <div className={className}>
-        <div className="flex items-center mb:justify-center mb:w-full mb:h-[40px] mb:mt-2 ds:h-auto">
+        <div className="flex items-center ds:flex-row">
           <Icon className="size-6 mr-3 text-brand-50" name={icon} />
-          <Link href={`/${sportSlug}`} className="text-heading-h2 font-bold mb:text-heading-h5 hover:underline">
-            <Message value={messages[sportSlug]} />
-          </Link>
-          {/* Display Country Name */}
-          <span className="mb:text-xs text-base text-grey-60 ml-2 pt-2 mb:pt-1">
-            {
-              countrySlug ? (
-                <>
-                  <Message value={messages.in} />
-                  {' '}
-                  <Link href={`/${sportSlug}/${countrySlug}`} className="text-grey-60 hover:underline">
-                    <Message value={messages[countrySlug] || countrySlug} />
-                  </Link>
-                </>
-              ) : null
-            }
-          </span>
+          <Message className="mb:text-heading-h3 text-heading-h2 font-bold" value={messages[sportSlug] || sportSlug} />
         </div>
-        <div className="flex items-center space-x-2 mb:justify-center mb:w-full mb:h-[40px] ds:h-auto">
+        <div className="flex items-center space-x-2 ds:flex-row">
           {
             isTimeFilterVisible && (
-              <TimeFilter className="ds:h-14 mb:h-8" />
+              <TimeFilter className="ds:h-10 nr:h-10 mb:h-10" />
             )
           }
           <ChangeOddsView />
