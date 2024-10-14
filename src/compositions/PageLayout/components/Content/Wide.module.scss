@@ -9,6 +9,7 @@ $rightSidebar: 316px;
   .leftSidebar {
     position: sticky;
     width: $leftSidebar;
+    background-color: #111;
   }
 
   .rightSidebar {
@@ -16,6 +17,7 @@ $rightSidebar: 316px;
     width: auto;
     max-width: $rightSidebar;
     transition: max-width 0.3s ease-in-out;
+    background-color: #111;
   }
 
   .main {

@@ -59,17 +59,17 @@ const League: React.FC<LeagueProps> = ({ sportSlug, league, isPage = false }) =>
             <div className="text-heading-h4 font-semibold">{name}</div>
           </div>
         ) : (
-          <div className="rounded-t-md flex items-center justify-between py-2 px-4 bg-bg-l2 mb-[2px]">
+          <div className="h-10 rounded-t-md flex items-center justify-between py-2 px-4 bg-bg-l2 mb-[2px]">
             <Href to={leagueUrl} className="flex items-center hover:underline">
               <Flag className="mr-2" country={countrySlug} />
-              <div className="text-caption-12 text-grey-70">{countryName}</div>
+              <div className="text-heading-h3 text-grey-70">{countryName}</div>
               <div className="size-1 rounded-full mx-2 bg-grey-20" />
-              <div className="text-caption-12">{name}</div>
+              <div className="text-heading-h5">{name}</div>
             </Href>
           </div>
         )
       }
-      <div className="space-y-[2px]">
+      <div className="grid grid-cols-2 gap-1">
         {
           games.map(game => (
             <Game

@@ -24,7 +24,7 @@ const OpponentLogo: React.FC<OpponentLogoProps> = ({ className, image, size = 28
     `bg-${bgColor}`,
     className,
     {
-      'size-8 p-1': size === 28,
+      'size-12 p-1': size === 28,
       'size-16 p-1': size === 48,
     }
   )

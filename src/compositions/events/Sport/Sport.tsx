@@ -13,7 +13,7 @@ import messages from './messages'
 export const SportSkeleton: React.CFC = ({ children }) => {
   return (
     <div>
-      <div className="flex items-center justify-between py-3 px-4">
+      <div className="flex items-center justify-between py-4 px-4">
         <div className="flex items-center">
           <div className="bone size-6 mr-3 rounded-full" />
           <div className="bone h-6 w-20 rounded-md" />
@@ -34,7 +34,7 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
 
   return (
     <div className="ds:py-2 nr:py-2 mb:py-1">
-      <div className="flex items-center justify-between py-3 px-4">
+      <div className="flex items-center justify-between py-4 px-4">
         {
           isPage ? (
             <Message className="text-heading-h4 font-semibold" value={{ ...messages.sport, values: { sportName: name } }} />

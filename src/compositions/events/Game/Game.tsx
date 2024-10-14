@@ -72,7 +72,7 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
   const isInLive = status === GameStatus.Live
 
   const rootClassName = cx(
-    'group flex mb:flex-col ds:items-center justify-between',
+    'group flex mb:flex-col ds:flex-col ds:items-center justify-between',
     'py-2 ds:px-4 mb:px-2 bg-bg-l2 last-of-type:rounded-b-md relative',
     className,
     {
@@ -93,7 +93,7 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
           <div className={liveClassName} />
         )
       }
-      <Href to={`${leagueUrl}/${gameId}`} className="flex items-center relative z-10 group/game-link">
+      <Href to={`${leagueUrl}/${gameId}`} className="h-20 flex items-center relative z-10 group/game-link">
         {
           !isUnique && (
             <>
