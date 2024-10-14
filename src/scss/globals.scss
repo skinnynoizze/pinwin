@@ -4,6 +4,13 @@
 
 @layer base {
 
+// src/scss/globals.scss
+.iconify-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
   html {
     font-size: 4.444vw;
     @media (min-width: 569px) {
