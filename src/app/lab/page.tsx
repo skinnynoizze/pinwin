@@ -18,8 +18,8 @@ const Page: React.FC = () => {
           season: '2022', // Specify the season
         },
         headers: {
-          // 'x-rapidapi-key': '7b2465fd5dmsh536849b37f8efcfp1ee7c2jsnef1a77ff04b1',
-          // 'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+        //  'x-rapidapi-key': process.env.FOOTBALL_API_KEY,
+        //  'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
         },
       }
 
@@ -31,7 +31,7 @@ const Page: React.FC = () => {
           id: team.team.id,
           name: team.team.name,
         }))
-        const blob = new Blob([JSON.stringify(teams, null, 2)], { type: 'application/json' })
+        const blob = new Blob([ JSON.stringify(teams, null, 2) ], { type: 'application/json' })
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
