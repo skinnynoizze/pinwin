@@ -6,6 +6,8 @@ import { useParams } from 'next/navigation'
 
 import EventInfo, { EventInfoSkeleton } from 'compositions/event/EventInfo/EventInfo'
 import Markets, { MarketsSkeleton } from 'compositions/event/Markets/Markets'
+import HeadToHead from 'compositions/event/Statistics/HeadToHead'
+import Tabs from 'compositions/event/Tabs'
 
 
 type ContentProps = {
@@ -20,10 +22,21 @@ const Content: React.FC<ContentProps> = ({ game, isGameInLive }) => {
     isGameExistInLive: isGameInLive,
   })
 
+  const tabs = [
+    {
+      label: 'Markets',
+      content: <Markets gameId={game.gameId} gameStatus={status} startsAt={game.startsAt} />,
+    },
+    {
+      label: 'Statistics',
+      content: <HeadToHead />,
+    },
+  ];
+
   return (
     <>
       <EventInfo game={game} status={status} />
-      <Markets gameId={game.gameId} gameStatus={status} startsAt={game.startsAt} />
+      <Tabs tabs={tabs} />
     </>
   )
 }
