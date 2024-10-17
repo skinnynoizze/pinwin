@@ -10,8 +10,8 @@ import LiveSwitcher from 'compositions/LiveSwitcher/LiveSwitcher'
 
 const LeftSidebar: React.FC = () => {
   return (
-    <div className="h-full flex flex-col">
-      <div className="px-4 py-5 sticky top-0 flex flex-col items-center">
+    <div className="hflex flex-col">
+      <div className="px-4 py-5 flex flex-col items-center">
         <LogoPinwin className="w-full h-auto" variant="lateral" />
         <div className="flex justify-center space-x-4 mt-2 iconify-icon">
           <a href="https://x.com/pinwinxyz" target="_blank" rel="noopener noreferrer">
@@ -22,7 +22,7 @@ const LeftSidebar: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="overflow-auto flex-grow no-scrollbar">
+      <div className="overflow-auto flex-grow no-scrollbar bg-bg-l1 border border-grey-10 rounded-md px-2 py-2">
         <LiveSwitcher />
         <Navigation className="mt-2" />
       </div>

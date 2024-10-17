@@ -140,7 +140,7 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
   }
 
   return (
-    <div className={cx('p-px rounded-md overflow-hidden', { 'bg-card-border-top': isExpanded })}>
+    <div className={cx('p-px rounded-md overflow-hidden mb-2', { 'bg-card-border-top': isExpanded })}>
       <div className={cx({ 'bg-bg-l1 rounded-md': isExpanded })}>
         <button
           onClick={onToggle}
@@ -148,8 +148,9 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
             cx(
               'group px-4 py-2 flex w-full items-center justify-between',
               {
-                'text-grey-60 hover:text-brand-50': !isExpanded && !isActive,
-                'text-brand-50': isExpanded || isActive,
+                'text-gray-200 hover:text-brand-50 bg-gray-800': !isExpanded && !isActive,
+                'text-brand-50 bg-gray-800': isExpanded || isActive,
+                'text-gray-200': !isExpanded && !isActive,
               }
             )
           }
@@ -250,7 +251,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
 
   return (
     <div className={className}>
-      <Message className="text-caption-13 font-semibold py-2 px-4 mb-2" value={messages.title} tag="p" />
+      <Message className="text-caption-13 font-semibold py-2 px-4" value={messages.title} tag="p" />
       <Sport
         slug="/"
         name={messages.top}

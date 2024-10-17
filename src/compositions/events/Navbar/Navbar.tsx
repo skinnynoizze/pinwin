@@ -5,6 +5,7 @@ import React from 'react'
 import { Message } from '@locmod/intl'
 import { useLive } from '@azuro-org/sdk'
 import cx from 'classnames'
+import Link from 'next/link'
 
 import { Icon, type IconName } from 'components/ui'
 import TimeFilter, { FilterByTimeProvider } from 'compositions/events/TimeFilter/TimeFilter'
@@ -29,6 +30,7 @@ const Navbar: React.CFC = ({ children }) => {
   const params = useParams()
 
   const sportSlug = params.sportSlug as string || 'top'
+  const countrySlug = params.countrySlug as string
   const icon: IconName = sportSlug === 'top' ? 'interface/iglu10b' : `sport/${sportSlug}` as IconName
   const isTimeFilterVisible = !isLive && sportSlug !== 'unique'
 
@@ -41,7 +43,13 @@ const Navbar: React.CFC = ({ children }) => {
       <div className={className}>
         <div className="flex items-center ds:flex-row">
           <Icon className="size-6 mr-3 text-brand-50" name={icon} />
-          <Message className="mb:text-heading-h3 text-heading-h2 font-bold" value={messages[sportSlug] || sportSlug} />
+          <Link href={`/${sportSlug}`} passHref>
+            <Message className="mb:text-heading-h3 text-heading-h2 font-bold hover:text-brand-50" value={messages[sportSlug] || sportSlug} />
+          </Link>
+          {countrySlug && <Message className="text-caption-14 mx-2" value={messages.in} />}
+          <Link href={`/${sportSlug}/${countrySlug}`} passHref>
+            <Message className="text-caption-14 hover:text-brand-50" value={messages[countrySlug] || countrySlug} />
+          </Link>
         </div>
         <div className="flex items-center space-x-2 ds:flex-row">
           {

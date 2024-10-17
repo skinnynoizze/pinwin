@@ -58,7 +58,7 @@ export default {
   baseUrl,
   companyName,
   rpcByChains,
-  topPageGamePerSportLimit: 5,
+  topPageGamePerSportLimit: 4,
   chainIcons,
   currencyIcons,
   sportsOrder,

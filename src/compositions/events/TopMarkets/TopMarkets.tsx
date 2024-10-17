@@ -195,13 +195,13 @@ const TopEvents: React.FC<TopEventsProps> = ({ sportSlug }) => {
         <div className="flex space-x-2">
           <button
             onClick={() => moveCarousel('prev')}
-            className="w-8 h-6 flex items-center justify-center bg-bg-l0 rounded-tl-full rounded-tr-1 rounded-br-1 rounded-bl-full border border-grey-15 text-grey-60 hover:text-grey-90 transition"
+            className="w-8 h-6 flex items-center justify-center bg-gray-800 rounded-tl-full rounded-tr-1 rounded-br-1 rounded-bl-full border border-grey-15 text-grey-60 hover:text-grey-90 transition"
           >
             <Icon className="size-5" name="interface/chevron_left" />
           </button>
           <button
             onClick={() => moveCarousel('next')}
-            className="w-8 h-6 flex items-center justify-center bg-bg-l0 rounded-tl-1 rounded-tr-full rounded-br-full rounded-bl-1 border border-grey-15 text-grey-60 hover:text-grey-90 transition"
+            className="w-8 h-6 flex items-center justify-center bg-gray-800 rounded-tl-1 rounded-tr-full rounded-br-full rounded-bl-1 border border-grey-15 text-grey-60 hover:text-grey-90 transition"
           >
             <Icon className="size-5" name="interface/chevron_right" />
           </button>

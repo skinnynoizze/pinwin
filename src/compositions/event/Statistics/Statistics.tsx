@@ -31,8 +31,6 @@ export default function TeamComparisonPage({ gameId, leagueName }: StatisticsPro
       {
         leagueName === 'La Liga' ? (
           <>
-            <h1 className="text-3xl font-bold mb-8 text-center">Team Comparison: Home vs Away</h1>
-
             {/* Radar Graph */}
             <div>
               <h2 className="text-2xl font-bold mb-4">Detailed Performance Breakdown</h2>

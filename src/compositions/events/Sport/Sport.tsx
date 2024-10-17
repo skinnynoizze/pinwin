@@ -33,7 +33,7 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
   const { slug, name } = sport
 
   return (
-    <div className="ds:py-2 nr:py-2 mb:py-1">
+    <div className="ds:pt-2 nr:py-2 mb:py-1">
       <div className="flex items-center justify-between py-3 px-4">
         {
           isPage ? (
@@ -41,13 +41,13 @@ const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
           ) : (
             <div className="flex items-center">
               <Icon className="size-6 mr-3 text-brand-50" name={`sport/${slug}` as IconName} />
-              <Link href={`/${slug}`} className="text-heading-h4 font-semibold hover:underline">{name}</Link>
+              <Link href={`/${slug}`} className="text-heading-h4 font-semibold hover:text-brand-50">{name}</Link>
             </div>
           )
         }
         {
           !isPage && (
-            <Href to={`/${slug}`} className="bg-grey-10 rounded-full text-grey-60 hover:text-brand-50 border border-bg-l2 size-6 flex items-center justify-center">
+            <Href to={`/${slug}`} className="bg-gray-800 rounded-full text-grey-60 hover:text-brand-50 border border-bg-l2 size-6 flex items-center justify-center">
               <Icon className="size-4" name="interface/chevron_right" />
             </Href>
           )

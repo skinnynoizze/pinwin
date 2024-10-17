@@ -13,6 +13,7 @@ import { constants } from 'helpers'
 
 import Providers from 'compositions/Providers/Providers'
 import PageLayout from 'compositions/PageLayout/PageLayout'
+import SnowBackground from 'compositions/SnowBackground/SnowBackground'
 
 import '../scss/globals.scss'
 
@@ -48,16 +49,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers
-          initialState={initialState}
-          userAgent={userAgentValue.ua}
-          initialLiveState={initialLiveState}
-          initialChainId={initialChainId}
-        >
-          <PageLayout>
-            {children}
-          </PageLayout>
-        </Providers>
+        <SnowBackground>
+          <Providers
+            initialState={initialState}
+            userAgent={userAgentValue.ua}
+            initialLiveState={initialLiveState}
+            initialChainId={initialChainId}
+          >
+            <PageLayout>
+              {children}
+            </PageLayout>
+          </Providers>
+        </SnowBackground>
       </body>
     </html>
   )

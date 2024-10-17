@@ -72,12 +72,8 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
   const isInLive = status === GameStatus.Live
 
   const rootClassName = cx(
-    'group flex mb:flex-col ds:items-center justify-between',
-    'py-2 ds:px-4 mb:px-2 bg-bg-l2 last-of-type:rounded-b-md relative',
-    className,
-    {
-      'first-of-type:rounded-t-md': withTopRadius || isUnique,
-    })
+    'group flex flex-col ds:items-center justify-between',
+    'py-2 ds:px-4 mb:px-2 bg-bg-l2 relative')
   const liveClassName = cx(
     'border-l-[2px] border-l-accent-red absolute h-full',
     'left-0 top-0 bg-live-game-shadow w-[30%] group-last-of-type:rounded-b-md',
@@ -93,7 +89,7 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
           <div className={liveClassName} />
         )
       }
-      <Href to={`${leagueUrl}/${gameId}`} className="flex items-center relative z-10 group/game-link">
+      <Href to={`${leagueUrl}/${gameId}`} className="mt-1 flex items-center relative z-10 group/game-link">
         {
           !isUnique && (
             <>
@@ -125,7 +121,7 @@ const Game: React.FC<GameProps> = ({ className, leagueUrl, game, withTopRadius, 
           <div className="text-caption-13 font-semibold group-hover/game-link:underline">{title}</div>
         </div>
       </Href>
-      <div className="w-full ds:max-w-[26.25rem] mb:mt-2">
+      <div className="w-full ds:max-w-[26.25rem] mt-2">
         {
           isMarketsVisible ? (
             <Markets gameId={gameId} gameStatus={status} />
