@@ -12,7 +12,7 @@ import { AmountInput, BetButton, Card, Chips, FreeBet, Warning, Slippage, QuickB
 
 const EmptyContent: React.FC = () => {
   return (
-    <div className="max-w-64 text-center mx-auto mt-6">
+    <div className="max-w-64 text-center mx-auto mt-6 mb-6">
       <img className="size-16 mx-auto" src="/images/illustrations/betslip.png" alt="" />
       <Message className="text-heading-h5 font-bold mt-4" value={messages.empty.title} tag="p" />
       <Message className="text-caption-13 mt-2 text-grey-60" value={messages.empty.text} tag="p" />

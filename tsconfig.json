@@ -30,6 +30,7 @@
     "incremental": true,
     "isolatedModules": true,
     "paths": {
+      "@/*": ["./*"],
       /* local modules */
       "cookie-storage": [
         "local_modules/cookie-storage"

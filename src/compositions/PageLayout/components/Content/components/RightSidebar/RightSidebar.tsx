@@ -7,7 +7,27 @@ import { Button, buttonMessages } from 'components/inputs'
 import { Icon } from 'components/ui'
 import { Media } from 'components/layout'
 import TabbedBetslip from 'compositions/TabbedBetslip/TabbedBetslip'
+import { AnimatedListDemo } from 'compositions/ActivityFeed/ActivityFeed'
 import Controls from '../Controls/Controls'
+
+
+const recentBets = [
+  {
+    id: '1',
+    user: { name: 'Alice Smith', avatar: '/avatars/alice.jpg' },
+    amount: 50,
+    odds: 2.5,
+    timestamp: '2023-06-15T10:30:00Z',
+  },
+  {
+    id: '2',
+    user: { name: 'Alice Smith', avatar: '/avatars/alice.jpg' },
+    amount: 50,
+    odds: 2.5,
+    timestamp: '2023-06-15T10:30:00Z',
+  },
+  // ... more bet objects
+]
 
 
 interface RightSidebarProps {
@@ -54,6 +74,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
           </div>
           <div className="bg-bg-l1 border border-grey-10 border-l-0 rounded-r-md overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">
             <TabbedBetslip />
+            <AnimatedListDemo />
           </div>
         </div>
       </div>

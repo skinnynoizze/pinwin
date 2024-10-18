@@ -11,35 +11,34 @@ import Game, { GameSkeleton } from 'compositions/events/Game/Game'
 
 export const LeagueSkeleton: React.FC<{isPage?: boolean}> = ({ isPage = false }) => {
   return (
-    <div className="mt-1 first-of-type:mt-0 mb-4">
+    <div className="mt-1 first-of-type:mt-0">
       {
         isPage ? (
           <div className="py-3 px-4">
             <div className="bone h-[1.375rem] w-44 rounded-full" />
           </div>
         ) : (
-          <div className="mb-2 w-full"> {/* Keep it full width */}
-            <div className="rounded-t-md flex items-center justify-start py-2 px-4 bg-gray-800">
-              <div className="flex items-center">
-                <div className="bone size-4 mr-2 rounded-full" />
-                <div className="bone h-[0.875rem] w-[8rem] rounded-md" />
-                <div className="size-1 rounded-full mx-2 bg-grey-20" />
-                <div className="bone h-[0.875rem] w-[4rem] rounded-md" />
-              </div>
+          <div className="rounded-t-md flex items-center justify-between py-2 px-4 bg-gray-800 mb-[2px]">
+            <div className="flex items-center">
+              <div className="bone size-4 mr-2 rounded-full" />
+              <div className="bone h-[0.875rem] w-[8rem] rounded-md" />
+              <div className="size-1 rounded-full mx-2 bg-grey-20" />
+              <div className="bone h-[0.875rem] w-[4rem] rounded-md" />
             </div>
           </div>
         )
       }
-      <div className="grid grid-cols-2 mb:grid-cols-1 gap-2">
+      <div className="space-y-[2px]">
         {
-          new Array(2).fill(0).map((_, index) => ( // Adjust to show 2 skeletons for evenness
-            <GameSkeleton key={index} className="w-full" />
+          new Array(3).fill(0).map((_, index) => (
+            <GameSkeleton key={index} className={isPage ? 'first-of-type:rounded-t-md' : ''} />
           ))
         }
       </div>
     </div>
   )
 }
+
 
 type LeagueProps = {
   sportSlug: string
@@ -53,11 +52,9 @@ const League: React.FC<LeagueProps> = ({ sportSlug, league, isPage = false }) =>
   const leagueUrl = `/${sportSlug}/${countrySlug}/${slug}`
   const countryUrl = `/${sportSlug}/${countrySlug}`
 
-  // Ensure an even number of games
-  const adjustedGames = games.length % 2 === 1 ? [ ...games, games[games.length - 1] ] : games
-
   return (
     <div className="mt-1 first-of-type:mt-0 mb-4">
+
       {
         isPage && (
           <div className="py-3 px-4">
@@ -66,22 +63,20 @@ const League: React.FC<LeagueProps> = ({ sportSlug, league, isPage = false }) =>
         )
       }
 
-      <div className="mb-2 w-full"> {/* Keep it full width */}
-        <div className="rounded-t-md flex items-center justify-start py-2 px-4 bg-gray-800">
-          <Href to={leagueUrl} className="flex items-center hover:underline">
-            <Flag className="mr-2" country={countrySlug} />
-            <div className="text-caption-13 text-grey-70">{countryName}</div>
-          </Href>
-          <Href to={leagueUrl} className="flex items-center hover:underline">
-            <div className="size-1 rounded-full mx-2 bg-grey-20" />
-            <div className="text-caption-13">{name}</div>
-          </Href>
-        </div>
+      <div className="rounded-t-md flex items-center justify-start py-2 px-4 bg-gray-800 mb-[2px]">
+        <Href to={leagueUrl} className="flex items-center hover:underline">
+          <Flag className="mr-2" country={countrySlug} />
+          <div className="text-caption-13 text-grey-70">{countryName}</div>
+        </Href>
+        <Href to={leagueUrl} className="flex items-center hover:underline">
+          <div className="size-1 rounded-full mx-2 bg-grey-20" />
+          <div className="text-caption-13">{name}</div>
+        </Href>
       </div>
 
       <div className="grid grid-cols-2 mb:grid-cols-1 gap-2">
         {
-          adjustedGames.map(game => (
+          games.map(game => (
             <Game
               key={game.gameId}
               leagueUrl={leagueUrl}
