@@ -1,0 +1,2764 @@
+{
+    "response": [
+        {
+            "fixture": {
+                "id": 1208580,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-18T19:00:00+00:00",
+                "timestamp": 1729278000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1470,
+                    "name": "Estadio de Mendizorroza",
+                    "city": "Vitoria-Gasteiz"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 542,
+                    "name": "Alaves",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/542.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 720,
+                    "name": "Valladolid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/720.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1212919,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-19T12:00:00+00:00",
+                "timestamp": 1729339200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1460,
+                    "name": "San Mam\u00e9s Barria",
+                    "city": "Bilbao"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 531,
+                    "name": "Athletic Club",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/531.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/540.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208581,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-19T14:15:00+00:00",
+                "timestamp": 1729347300,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1486,
+                    "name": "Estadio El Sadar",
+                    "city": "Iru\u00f1ea"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 727,
+                    "name": "Osasuna",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/727.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 543,
+                    "name": "Real Betis",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/543.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208578,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-19T16:30:00+00:00",
+                "timestamp": 1729355400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1478,
+                    "name": "Estadi Municipal de Montilivi",
+                    "city": "Girona"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 547,
+                    "name": "Girona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/547.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 548,
+                    "name": "Real Sociedad",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/548.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208577,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-19T19:00:00+00:00",
+                "timestamp": 1729364400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Estadio Abanca-Bala\u00eddos",
+                    "city": "Vigo"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 538,
+                    "name": "Celta Vigo",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/538.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 541,
+                    "name": "Real Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/541.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208579,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-20T12:00:00+00:00",
+                "timestamp": 1729425600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19940,
+                    "name": "Estadi Mallorca Son Moix",
+                    "city": "Palma de Mallorca"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 798,
+                    "name": "Mallorca",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/798.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 728,
+                    "name": "Rayo Vallecano",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/728.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208575,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-20T14:15:00+00:00",
+                "timestamp": 1729433700,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19217,
+                    "name": "Riyadh Air Metropolitano",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 530,
+                    "name": "Atletico Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/530.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 537,
+                    "name": "Leganes",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/537.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208582,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-20T16:30:00+00:00",
+                "timestamp": 1729441800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1498,
+                    "name": "Estadio de la Cer\u00e1mica",
+                    "city": "Villarreal"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 533,
+                    "name": "Villarreal",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/533.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 546,
+                    "name": "Getafe",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/546.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208576,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-20T19:00:00+00:00",
+                "timestamp": 1729450800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19939,
+                    "name": "Estadi Ol\u00edmpic Llu\u00eds Companys",
+                    "city": "Barcelona"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 529,
+                    "name": "Barcelona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/529.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 536,
+                    "name": "Sevilla",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/536.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208583,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-21T19:00:00+00:00",
+                "timestamp": 1729537200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1497,
+                    "name": "Estadio de Mestalla",
+                    "city": "Valencia"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 10"
+            },
+            "teams": {
+                "home": {
+                    "id": 532,
+                    "name": "Valencia",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/532.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 534,
+                    "name": "Las Palmas",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/534.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1212920,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-25T19:00:00+00:00",
+                "timestamp": 1729882800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1474,
+                    "name": "RCDE Stadium",
+                    "city": "Cornella de Llobregat"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/540.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 536,
+                    "name": "Sevilla",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/536.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208591,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-26T12:00:00+00:00",
+                "timestamp": 1729944000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1492,
+                    "name": "Estadio Municipal Jos\u00e9 Zorrilla",
+                    "city": "Valladolid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 720,
+                    "name": "Valladolid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/720.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 533,
+                    "name": "Villarreal",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/533.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208592,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-26T14:15:00+00:00",
+                "timestamp": 1729952100,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1488,
+                    "name": "Estadio de Vallecas",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 728,
+                    "name": "Rayo Vallecano",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/728.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 542,
+                    "name": "Alaves",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/542.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208589,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-26T16:30:00+00:00",
+                "timestamp": 1729960200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1481,
+                    "name": "Estadio de Gran Canaria",
+                    "city": "Las Palmas de Gran Canaria"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 534,
+                    "name": "Las Palmas",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/534.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 547,
+                    "name": "Girona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/547.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208587,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-26T19:00:00+00:00",
+                "timestamp": 1729969200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1456,
+                    "name": "Estadio Santiago Bernab\u00e9u",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 541,
+                    "name": "Real Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/541.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 529,
+                    "name": "Barcelona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/529.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208588,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-27T12:00:00+00:00",
+                "timestamp": 1730030400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1464,
+                    "name": "Estadio Municipal de Butarque",
+                    "city": "Legan\u00e9s"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 537,
+                    "name": "Leganes",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/537.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 538,
+                    "name": "Celta Vigo",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/538.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208584,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-27T14:15:00+00:00",
+                "timestamp": 1730038500,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 20422,
+                    "name": "Estadio Coliseum",
+                    "city": "Getafe"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 546,
+                    "name": "Getafe",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/546.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 532,
+                    "name": "Valencia",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/532.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208586,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-27T16:30:00+00:00",
+                "timestamp": 1730046600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1489,
+                    "name": "Estadio Benito Villamar\u00edn",
+                    "city": "Sevilla"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 543,
+                    "name": "Real Betis",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/543.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 530,
+                    "name": "Atletico Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/530.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208590,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-27T19:00:00+00:00",
+                "timestamp": 1730055600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1491,
+                    "name": "Reale Arena",
+                    "city": "Donostia-San Sebasti\u00e1n"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 548,
+                    "name": "Real Sociedad",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/548.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 727,
+                    "name": "Osasuna",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/727.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208585,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-28T19:00:00+00:00",
+                "timestamp": 1730142000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19940,
+                    "name": "Estadi Mallorca Son Moix",
+                    "city": "Palma de Mallorca"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 11"
+            },
+            "teams": {
+                "home": {
+                    "id": 798,
+                    "name": "Mallorca",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/798.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 531,
+                    "name": "Athletic Club",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/531.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208598,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-01T20:00:00+00:00",
+                "timestamp": 1730491200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1470,
+                    "name": "Estadio de Mendizorroza",
+                    "city": "Vitoria-Gasteiz"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 542,
+                    "name": "Alaves",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/542.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 798,
+                    "name": "Mallorca",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/798.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208597,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-02T13:00:00+00:00",
+                "timestamp": 1730552400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1486,
+                    "name": "Estadio El Sadar",
+                    "city": "Iru\u00f1ea"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 727,
+                    "name": "Osasuna",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/727.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 720,
+                    "name": "Valladolid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/720.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208596,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-02T15:15:00+00:00",
+                "timestamp": 1730560500,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1478,
+                    "name": "Estadi Municipal de Montilivi",
+                    "city": "Girona"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 547,
+                    "name": "Girona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/547.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 537,
+                    "name": "Leganes",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/537.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208599,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-02T17:30:00+00:00",
+                "timestamp": 1730568600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1498,
+                    "name": "Estadio de la Cer\u00e1mica",
+                    "city": "Villarreal"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 533,
+                    "name": "Villarreal",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/533.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 728,
+                    "name": "Rayo Vallecano",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/728.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208600,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-02T20:00:00+00:00",
+                "timestamp": 1730577600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1497,
+                    "name": "Estadio de Mestalla",
+                    "city": "Valencia"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 532,
+                    "name": "Valencia",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/532.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 541,
+                    "name": "Real Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/541.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208594,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-03T13:00:00+00:00",
+                "timestamp": 1730638800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19217,
+                    "name": "Riyadh Air Metropolitano",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 530,
+                    "name": "Atletico Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/530.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 534,
+                    "name": "Las Palmas",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/534.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1212921,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-03T15:15:00+00:00",
+                "timestamp": 1730646900,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19939,
+                    "name": "Estadi Ol\u00edmpic Llu\u00eds Companys",
+                    "city": "Barcelona"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 529,
+                    "name": "Barcelona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/529.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/540.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208601,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-03T17:30:00+00:00",
+                "timestamp": 1730655000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1494,
+                    "name": "Estadio Ram\u00f3n S\u00e1nchez Pizju\u00e1n",
+                    "city": "Sevilla"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 536,
+                    "name": "Sevilla",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/536.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 548,
+                    "name": "Real Sociedad",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/548.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208593,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-03T20:00:00+00:00",
+                "timestamp": 1730664000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1460,
+                    "name": "San Mam\u00e9s Barria",
+                    "city": "Bilbao"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 531,
+                    "name": "Athletic Club",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/531.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 543,
+                    "name": "Real Betis",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/543.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208595,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-04T20:00:00+00:00",
+                "timestamp": 1730750400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": null,
+                    "name": "Estadio Abanca-Bala\u00eddos",
+                    "city": "Vigo"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 12"
+            },
+            "teams": {
+                "home": {
+                    "id": 538,
+                    "name": "Celta Vigo",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/538.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 546,
+                    "name": "Getafe",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/546.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208609,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-08T20:00:00+00:00",
+                "timestamp": 1731096000,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1488,
+                    "name": "Estadio de Vallecas",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 728,
+                    "name": "Rayo Vallecano",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/728.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 534,
+                    "name": "Las Palmas",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/534.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208608,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-09T13:00:00+00:00",
+                "timestamp": 1731157200,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1456,
+                    "name": "Estadio Santiago Bernab\u00e9u",
+                    "city": "Madrid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 541,
+                    "name": "Real Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/541.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 727,
+                    "name": "Osasuna",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/727.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208610,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-09T15:15:00+00:00",
+                "timestamp": 1731165300,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1498,
+                    "name": "Estadio de la Cer\u00e1mica",
+                    "city": "Villarreal"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 533,
+                    "name": "Villarreal",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/533.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 542,
+                    "name": "Alaves",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/542.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1212922,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-09T17:30:00+00:00",
+                "timestamp": 1731173400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 20421,
+                    "name": "Stage Front Stadium",
+                    "city": "Cornella de Llobregat"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/540.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 532,
+                    "name": "Valencia",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/532.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208603,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-09T20:00:00+00:00",
+                "timestamp": 1731182400,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 20422,
+                    "name": "Estadio Coliseum",
+                    "city": "Getafe"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 546,
+                    "name": "Getafe",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/546.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 547,
+                    "name": "Girona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/547.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208602,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-10T13:00:00+00:00",
+                "timestamp": 1731243600,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1489,
+                    "name": "Estadio Benito Villamar\u00edn",
+                    "city": "Sevilla"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 543,
+                    "name": "Real Betis",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/543.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 538,
+                    "name": "Celta Vigo",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/538.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208606,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-10T15:15:00+00:00",
+                "timestamp": 1731251700,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 19940,
+                    "name": "Estadi Mallorca Son Moix",
+                    "city": "Palma de Mallorca"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 798,
+                    "name": "Mallorca",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/798.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 530,
+                    "name": "Atletico Madrid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/530.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208604,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-10T17:30:00+00:00",
+                "timestamp": 1731259800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1464,
+                    "name": "Estadio Municipal de Butarque",
+                    "city": "Legan\u00e9s"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 537,
+                    "name": "Leganes",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/537.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 536,
+                    "name": "Sevilla",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/536.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208605,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-10T17:30:00+00:00",
+                "timestamp": 1731259800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1492,
+                    "name": "Estadio Municipal Jos\u00e9 Zorrilla",
+                    "city": "Valladolid"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 720,
+                    "name": "Valladolid",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/720.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 531,
+                    "name": "Athletic Club",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/531.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        },
+        {
+            "fixture": {
+                "id": 1208607,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-11-10T20:00:00+00:00",
+                "timestamp": 1731268800,
+                "periods": {
+                    "first": null,
+                    "second": null
+                },
+                "venue": {
+                    "id": 1491,
+                    "name": "Reale Arena",
+                    "city": "Donostia-San Sebasti\u00e1n"
+                },
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null,
+                    "extra": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https:\/\/media.api-sports.io\/football\/leagues\/140.png",
+                "flag": "https:\/\/media.api-sports.io\/flags\/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 13"
+            },
+            "teams": {
+                "home": {
+                    "id": 548,
+                    "name": "Real Sociedad",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/548.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 529,
+                    "name": "Barcelona",
+                    "logo": "https:\/\/media.api-sports.io\/football\/teams\/529.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "score": {
+                "halftime": {
+                    "home": null,
+                    "away": null
+                },
+                "fulltime": {
+                    "home": null,
+                    "away": null
+                },
+                "extratime": {
+                    "home": null,
+                    "away": null
+                },
+                "penalty": {
+                    "home": null,
+                    "away": null
+                }
+            }
+        }
+    ]
+}

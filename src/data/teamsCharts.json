@@ -1,0 +1,518 @@
+[
+  {
+    "gameId": "1001000000001598742285",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 60,
+        "away": 40
+      },
+      {
+        "category": "Attack",
+        "home": 43,
+        "away": 57
+      },
+      {
+        "category": "Defense",
+        "home": 62,
+        "away": 38
+      },
+      {
+        "category": "Poisson",
+        "home": 75,
+        "away": 25
+      },
+      {
+        "category": "H2H",
+        "home": 29,
+        "away": 71
+      },
+      {
+        "category": "Goals",
+        "home": 40,
+        "away": 60
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 99,
+        "away": 1
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001596805633",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 55,
+        "away": 45
+      },
+      {
+        "category": "Attack",
+        "home": 50,
+        "away": 50
+      },
+      {
+        "category": "Defense",
+        "home": 70,
+        "away": 30
+      },
+      {
+        "category": "Poisson",
+        "home": 80,
+        "away": 20
+      },
+      {
+        "category": "H2H",
+        "home": 40,
+        "away": 60
+      },
+      {
+        "category": "Goals",
+        "home": 45,
+        "away": 55
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 52,
+        "away": 48
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001596805634",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 70,
+        "away": 30
+      },
+      {
+        "category": "Attack",
+        "home": 60,
+        "away": 40
+      },
+      {
+        "category": "Defense",
+        "home": 65,
+        "away": 35
+      },
+      {
+        "category": "Poisson",
+        "home": 90,
+        "away": 10
+      },
+      {
+        "category": "H2H",
+        "home": 50,
+        "away": 50
+      },
+      {
+        "category": "Goals",
+        "home": 55,
+        "away": 45
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 54,
+        "away": 46
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001596805635",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 65,
+        "away": 35
+      },
+      {
+        "category": "Attack",
+        "home": 55,
+        "away": 45
+      },
+      {
+        "category": "Defense",
+        "home": 60,
+        "away": 40
+      },
+      {
+        "category": "Poisson",
+        "home": 85,
+        "away": 15
+      },
+      {
+        "category": "H2H",
+        "home": 30,
+        "away": 70
+      },
+      {
+        "category": "Goals",
+        "home": 50,
+        "away": 50
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 53,
+        "away": 47
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598229734",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 55,
+        "away": 45
+      },
+      {
+        "category": "Attack",
+        "home": 71,
+        "away": 29
+      },
+      {
+        "category": "Defense",
+        "home": 40,
+        "away": 60
+      },
+      {
+        "category": "Poisson",
+        "home": 90,
+        "away": 10
+      },
+      {
+        "category": "H2H",
+        "home": 100,
+        "away": 0
+      },
+      {
+        "category": "Goals",
+        "home": 91,
+        "away": 9
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 69.4,
+        "away": 30.6
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598229729",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 75,
+        "away": 25
+      },
+      {
+        "category": "Attack",
+        "home": 78,
+        "away": 22
+      },
+      {
+        "category": "Defense",
+        "home": 67,
+        "away": 33
+      },
+      {
+        "category": "Poisson",
+        "home": 89,
+        "away": 11
+      },
+      {
+        "category": "H2H",
+        "home": 85,
+        "away": 15
+      },
+      {
+        "category": "Goals",
+        "home": 88,
+        "away": 13
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 80.3,
+        "away": 19.8
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598229723",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 64,
+        "away": 36
+      },
+      {
+        "category": "Attack",
+        "home": 62,
+        "away": 38
+      },
+      {
+        "category": "Defense",
+        "home": 33,
+        "away": 67
+      },
+      {
+        "category": "Poisson",
+        "home": 62,
+        "away": 38
+      },
+      {
+        "category": "H2H",
+        "home": 75,
+        "away": 25
+      },
+      {
+        "category": "Goals",
+        "home": 63,
+        "away": 38
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 59.8,
+        "away": 40.3
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598229720",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 83,
+        "away": 17
+      },
+      {
+        "category": "Attack",
+        "home": 29,
+        "away": 71
+      },
+      {
+        "category": "Defense",
+        "home": 63,
+        "away": 38
+      },
+      {
+        "category": "Poisson",
+        "home": 74,
+        "away": 26
+      },
+      {
+        "category": "H2H",
+        "home": 40,
+        "away": 60
+      },
+      {
+        "category": "Goals",
+        "home": 36,
+        "away": 64
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 54.2,
+        "away": 46
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598713709",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 23,
+        "away": 77
+      },
+      {
+        "category": "Attack",
+        "home": 45,
+        "away": 55
+      },
+      {
+        "category": "Defense",
+        "home": 25,
+        "away": 75
+      },
+      {
+        "category": "Poisson",
+        "home": 51,
+        "away": 49
+      },
+      {
+        "category": "H2H",
+        "home": 15,
+        "away": 85
+      },
+      {
+        "category": "Goals",
+        "home": 39,
+        "away": 61
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 33,
+        "away": 67
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598740300",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 31,
+        "away": 69
+      },
+      {
+        "category": "Attack",
+        "home": 43,
+        "away": 57
+      },
+      {
+        "category": "Defense",
+        "home": 56,
+        "away": 44
+      },
+      {
+        "category": "Poisson",
+        "home": 31,
+        "away": 69
+      },
+      {
+        "category": "H2H",
+        "home": 29,
+        "away": 71
+      },
+      {
+        "category": "Goals",
+        "home": 25,
+        "away": 75
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 35.8,
+        "away": 64.2
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598742286",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 17,
+        "away": 83
+      },
+      {
+        "category": "Attack",
+        "home": 63,
+        "away": 38
+      },
+      {
+        "category": "Defense",
+        "home": 33,
+        "away": 67
+      },
+      {
+        "category": "Poisson",
+        "home": 49,
+        "away": 51
+      },
+      {
+        "category": "H2H",
+        "home": 7,
+        "away": 93
+      },
+      {
+        "category": "Goals",
+        "home": 20,
+        "away": 80
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 31.5,
+        "away": 68.7
+      }
+    ]
+  },
+  {
+    "gameId": "1001000000001598742287",
+    "leagueName": "La Liga",
+    "radarData": [
+      {
+        "category": "Form",
+        "home": 75,
+        "away": 25
+      },
+      {
+        "category": "Attack",
+        "home": 54,
+        "away": 46
+      },
+      {
+        "category": "Defense",
+        "home": 75,
+        "away": 25
+      },
+      {
+        "category": "Poisson",
+        "home": 58,
+        "away": 42
+      },
+      {
+        "category": "H2H",
+        "home": 60,
+        "away": 40
+      },
+      {
+        "category": "Goals",
+        "home": 71,
+        "away": 29
+      }
+    ],
+    "totalData": [
+      {
+        "category": "Total",
+        "home": 65.5,
+        "away": 34.5
+      }
+    ]
+  }
+]
