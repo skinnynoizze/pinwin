@@ -53,7 +53,7 @@ const WagmiProvider: React.CFC<{ initialState?: State }> = (props) => {
               themeType: 'dark',
               customStyle: {
                 logo: iconImage.src,
-                projectName: 'Social Login',
+                projectName: 'PinWin.xyz',
               },
             }
           }
