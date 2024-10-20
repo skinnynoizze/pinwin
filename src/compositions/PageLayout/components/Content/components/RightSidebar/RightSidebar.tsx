@@ -55,7 +55,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
           </div>
           <div className="bg-bg-l1 border border-grey-10 border-l-0 rounded-r-md overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">
             <TabbedBetslip />
-            <ActivityFeed />
+            {/* <ActivityFeed /> */}
           </div>
         </div>
       </div>
