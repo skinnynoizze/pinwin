@@ -74,7 +74,7 @@ const League: React.FC<LeagueProps> = ({ sportSlug, league, isPage = false }) =>
         </Href>
       </div>
 
-      <div className="grid grid-cols-2 mb:grid-cols-1 gap-2">
+      <div className="space-y-[2px]">
         {
           games.map(game => (
             <Game

@@ -184,28 +184,43 @@ fragment BetDetails on Bet {
 
 query GetLatestBets($first: Int!) {
   bets(first: $first, orderBy: createdBlockTimestamp, orderDirection: desc) {
-    id
     betId
+    status
+    type
     amount
     createdBlockTimestamp
     actor
     potentialPayout
     odds
+    core {
+      address
+    }
     selections {
-      id
       odds
       outcome {
         outcomeId
-      }
-    }
-    status
-    _updatedAt
-    __typename
-    _games {
-      title
-      sport {
-        name
+        condition {
+          conditionId
+          game {
+            title
+            sport {
+              name
+            }
+            league {
+              name
+              country {
+                name
+              }
+            }
+          }
+        }
       }
     }
   }
+}
+
+Variables:
+
+{
+  "first": 10
 }

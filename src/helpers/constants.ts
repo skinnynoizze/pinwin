@@ -33,7 +33,7 @@ const currencyIcons: Record<ChainId, IconName> = {
   [spicy.id]: 'currency/wchz',
 }
 
-const sportsOrder = [ 'politics', 'football', 'basketball', 'tennis', 'cricket', 'mma', 'boxing', 'ice-hockey', 'american-football', 'baseball', 'rugby-union', 'rugby-league' ]
+const sportsOrder = [ 'politics', 'football', 'basketball', 'tennis', 'american-football', 'baseball', 'boxing', 'mma', 'ice-hockey', 'rugby-union', 'rugby-league', 'cricket' ]
 
 const links = {
   docs: 'https://docs.pinwin.xyz/',
