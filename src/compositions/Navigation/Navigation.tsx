@@ -251,7 +251,6 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
 
   return (
     <div className={className}>
-      <Message className="text-caption-13 font-semibold py-2 px-4" value={messages.title} tag="p" />
       <Sport
         slug="/"
         name={messages.top}
