@@ -21,7 +21,7 @@ export default {
   },
   iceIceBaby: {
     en: 'Ice, Ice, Baby... It\'s Winning Time!',
-    es: '¡Hielo, hielo, bebé... Es hora de ganar!',
+    es: '¡Hielo, hielo, Baby... Es hora de ganar!',
   },
   slideIntoVictory: {
     en: 'Slide into victory with our frosty selection of games',
