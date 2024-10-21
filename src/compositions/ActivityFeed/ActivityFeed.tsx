@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useApolloClients } from '@azuro-org/sdk' // Import useApolloClients
 import { cn } from '@/lib/utils'
 import { AnimatedList } from '@/components/ui/animated-list'
+import { Icon } from 'components/ui' // Assuming you have an Icon component
 import useLatestBets from '../../hooks/useLatestBets' // Import your useLatestBets hook
+import shortenAddress from '../../helpers/shortenAddress'
 
 // Update the Item interface to match the Bet structure
 interface Item {
@@ -36,6 +38,7 @@ const sportIcons: { [key: string]: string } = {
 
 // Component to display the activity feed
 const ActivityFeed = () => {
+  const [ isCollapsed, setIsCollapsed ] = useState(false)
   const { prematchClient } = useApolloClients() // Get the prematch client
   const { bets, loading, error } = useLatestBets(5, prematchClient) // Fetch the latest 5 bets
 
@@ -66,66 +69,72 @@ const ActivityFeed = () => {
     <div
       className={
         cn(
-          'relative flex h-auto w-full flex-col p-6 overflow-hidden bg-background md:shadow-xl',
-          'relative mx-auto min-h-fit w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl p-4 mb-4',
-          // animation styles
+          'relative flex flex-col overflow-hidden bg-background md:shadow-xl',
+          'relative mx-auto w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl mb-4',
           'transition-all duration-200 ease-in-out hover:shadow-lg',
-          // light styles
           'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
-          // dark styles
-          'transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'
+          'transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
+          isCollapsed ? 'h-16' : 'h-auto'
         )
       }
     >
-      <AnimatedList>
-        {
-          notifications.map((item, idx) => (
-            <Notification {...item} key={idx} />
-          ))
-        }
-      </AnimatedList>
+      <div className="flex justify-between items-center p-4">
+        <h2 className="text-lg font-semibold">Activity Feed</h2>
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="focus:outline-none"
+        >
+          <Icon
+            name={isCollapsed ? 'interface/chevron_down' : 'interface/chevron_up'}
+            className="h-6 w-6 text-gray-500"
+          />
+        </button>
+      </div>
+      <div className={cn('overflow-hidden transition-all duration-300', isCollapsed ? 'max-h-0' : 'max-h-[1000px]')}>
+        <AnimatedList>
+          {
+            notifications.map((item, idx) => (
+              <Notification {...item} key={idx} />
+            ))
+          }
+        </AnimatedList>
+      </div>
     </div>
   )
 }
 
 const Notification = ({ user, game, sport, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
-  // Construct a URL for the game (this is just an example, adjust as needed)
-  const gameUrl = `/games/${game.replace(/\s+/g, '-').toLowerCase()}` // Example URL structure
+  const gameUrl = `/games/${game.replace(/\s+/g, '-').toLowerCase()}`
+  const shortenedUser = shortenAddress(user)
 
   return (
     <figure
       className={
         cn(
-          'relative mx-auto min-h-fit w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl p-4 mb-4',
-          // animation styles
-          'transition-all duration-200 ease-in-out hover:shadow-lg',
-          // light styles
-          'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
-          // dark styles
-          'transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'
+          'relative w-full cursor-pointer overflow-hidden rounded-lg p-2 mb-2',
+          'transition-all duration-200 ease-in-out hover:shadow-md',
+          'bg-white dark:bg-gray-800',
+          'border border-gray-200 dark:border-gray-700'
         )
       }
-      style={{ borderColor: color }} // Optional: Use color for border or background
     >
-      <a href={gameUrl} className="flex flex-row items-center gap-3"> {/* Wrap the content in an anchor tag */}
+      <a href={gameUrl} className="flex items-center gap-2">
         <div
-          className="flex size-10 items-center justify-center rounded-2xl"
-          style={
-            {
-              backgroundColor: color, // Use color for the background
-            }
-          }
+          className="flex size-8 items-center justify-center rounded-full"
+          style={{ backgroundColor: color }}
         >
-          <span className="text-lg">{icon}</span> {/* Display the icon */}
+          <span className="text-sm">{icon}</span>
         </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-sm font-medium dark:text-white ">
-            <span className="text-xs sm:text-sm">{user}</span>
-            <span className="mx-1">·</span>
+        <div className="flex-grow overflow-hidden">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-gray-900 dark:text-white">{shortenedUser}</span>
             <span className="text-xs text-gray-500">{timestamp}</span>
-          </figcaption>
-          <p className="text-xs font-normal dark:text-white/60">
-            {selection} on {game} ({sport}) - Amount: ${amount}, Odds: {odds}, Potential Payout: ${potentialPayout}
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-300 truncate">
+            {selection} on {game} ({sport})
+          </p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            ${amount} @ {odds} | Payout: ${potentialPayout}
           </p>
         </div>
       </a>
