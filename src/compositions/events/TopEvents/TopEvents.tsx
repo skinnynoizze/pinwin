@@ -18,6 +18,31 @@ import OutcomeButton from 'compositions/OutcomeButton/OutcomeButton'
 import messages from './messages'
 
 
+export const useTopEventsCount = () => {
+  const { games } = useGames({
+    filter: { limit: 200 },
+    orderBy: Game_OrderBy.Turnover,
+  })
+
+  const uniqueGamesCount = useMemo(() => {
+    const seenLeagues = new Set()
+
+    return games?.filter(game => {
+      const leagueSlug = game.league.slug
+
+      if (!seenLeagues.has(leagueSlug)) {
+        seenLeagues.add(leagueSlug)
+
+        return true
+      }
+
+      return false
+    }).length || 0
+  }, [ games ])
+
+  return uniqueGamesCount
+}
+
 const CardSkeleton: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cx('bone h-[12.125rem] w-full rounded-md', className)} />

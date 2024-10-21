@@ -12,17 +12,19 @@ export interface AnimatedListProps {
 }
 
 export const AnimatedList = React.memo(
-  ({ className, children, delay = 2500 }: AnimatedListProps) => {
+  ({ className, children, delay = 3000 }: AnimatedListProps) => {
     const [ index, setIndex ] = useState(0)
     const childrenArray = React.Children.toArray(children)
 
     useEffect(() => {
-      const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % childrenArray.length)
-      }, delay)
+      if (index < childrenArray.length - 1) {
+        const interval = setInterval(() => {
+          setIndex((prevIndex) => prevIndex + 1)
+        }, delay)
 
-      return () => clearInterval(interval)
-    }, [ childrenArray.length, delay ])
+        return () => clearInterval(interval)
+      }
+    }, [ index, childrenArray.length, delay ])
 
     const itemsToShow = useMemo(
       () => childrenArray.slice(0, index + 1).reverse(),

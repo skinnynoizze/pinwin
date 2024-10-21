@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { Message } from '@locmod/intl'
 import styles from './Carrousel.module.scss'
+import messages from './messages'
 
 
 interface SlideData {
   image: string
   alt: string
-  title: string
-  description: string
+  titleKey: keyof typeof messages
+  descriptionKey: keyof typeof messages
   link: string
 }
 
@@ -23,22 +25,22 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
     {
       image: '/images/carrousel/3.png',
       alt: '',
-      title: 'Who Will Rule the Ice?',
-      description: 'Glide into the prediction market and let your political picks soar!',
+      titleKey: 'whoWillRuleTheIce',
+      descriptionKey: 'glideIntoPrediction',
       link: '/politics/international-tournaments/2024-presidential-election-usa/1001000000001596805632?tab=statistics',
     },
     {
       image: '/images/carrousel/2.png',
       alt: '',
-      title: 'Contrast Stats, Freeze Your Strategy!',
-      description: 'Dive into team analytics and chill your opponents with data-driven decisions.',
-      link: '/football/spain/la-liga/1001000000001598742285?tab=statistics', // Update this to the correct path for your team stats page
+      titleKey: 'contrastStats',
+      descriptionKey: 'diveIntoTeamAnalytics',
+      link: '/football/spain/la-liga/1001000000001598742285?tab=statistics',
     },
     {
       image: '/images/carrousel/1.png',
       alt: '',
-      title: 'Ice, Ice, Baby... It\'s Winning Time!',
-      description: 'Slide into victory with our frosty selection of games',
+      titleKey: 'iceIceBaby',
+      descriptionKey: 'slideIntoVictory',
       link: '',
     },
     /*     {
@@ -72,7 +74,7 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
   }, [ slides.length ])
 
   return (
-    <div className={styles.bannerWrapper} style={{ height: isSidebarExpanded ? '300px' : '400px' }}> {/* Adjust height based on sidebar state */}
+    <div className={styles.bannerWrapper} style={{ height: isSidebarExpanded ? '300px' : '400px' }}>
       {
         slides.map((slide, index) => (
           <div
@@ -81,8 +83,12 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
           >
             <Link href={slide.link} className={styles.slideLink}>
               <div className={`${styles.slideContent} ${isTransitioning ? styles.transitioning : ''}`}>
-                <h2 className={styles.slideTitle}>{slide.title}</h2>
-                <p className={styles.slideDescription}>{slide.description}</p>
+                <h2 className={styles.slideTitle}>
+                  <Message value={messages[slide.titleKey]} />
+                </h2>
+                <p className={styles.slideDescription}>
+                  <Message value={messages[slide.descriptionKey]} />
+                </p>
               </div>
             </Link>
           </div>

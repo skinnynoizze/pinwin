@@ -13,6 +13,7 @@ import type { IconName } from 'components/ui'
 import { Icon } from 'components/ui'
 import { Href } from 'components/navigation'
 import { Flag } from 'components/dataDisplay'
+import { useTopEventsCount } from 'compositions/events/TopEvents/TopEvents'
 
 import Skeleton from './components/Skeleton/Skeleton'
 
@@ -245,6 +246,8 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       })
   }, [ navigation ])
 
+  const topEventsCount = useTopEventsCount()
+
   if (loading) {
     return <Skeleton className={className} />
   }
@@ -254,7 +257,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       <Sport
         slug="/"
         name={messages.top}
-        gamesCount={allTopGames}
+        gamesCount={topEventsCount}
         isExpanded={false}
         onToggle={() => setExpandedSport(null)}
       />

@@ -37,7 +37,7 @@ const sportIcons: { [key: string]: string } = {
 // Component to display the activity feed
 const ActivityFeed = () => {
   const { prematchClient } = useApolloClients() // Get the prematch client
-  const { bets, loading, error } = useLatestBets(10, prematchClient) // Fetch the latest 10 bets
+  const { bets, loading, error } = useLatestBets(5, prematchClient) // Fetch the latest 5 bets
 
   if (loading) {
     return <div>Loading...</div>
