@@ -58,7 +58,7 @@ export default {
   baseUrl,
   companyName,
   rpcByChains,
-  topPageGamePerSportLimit: 4,
+  topPageGamePerSportLimit: 1,
   chainIcons,
   currencyIcons,
   sportsOrder,
@@ -71,3 +71,4 @@ export default {
   particleProjectId,
   particleAppId,
 }
+

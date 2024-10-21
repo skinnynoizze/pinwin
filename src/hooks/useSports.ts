@@ -20,16 +20,10 @@ const useSports = () => {
   const isTopPage = !params.sportSlug || params.sportSlug === '/'
   const { isLive } = useLive()
 
-  const props: UseSportsProps = isTopPage ? {
-    gameOrderBy: Game_OrderBy.Turnover,
-    filter: {
-      limit: constants.topPageGamePerSportLimit,
-    },
-    isLive,
-  } : {
-    gameOrderBy: Game_OrderBy.StartsAt,
-    orderDir: OrderDirection.Asc,
-    filter: {
+  const props: UseSportsProps = {
+    gameOrderBy: isTopPage ? Game_OrderBy.Turnover : Game_OrderBy.StartsAt,
+    orderDir: isTopPage ? OrderDirection.Desc : OrderDirection.Asc,
+    filter: isTopPage ? {} : {
       sportSlug: params.sportSlug as string,
       countrySlug: params.countrySlug as string,
       leagueSlug: params.leagueSlug as string,
@@ -41,51 +35,31 @@ const useSports = () => {
 
   const formattedSports = useMemo(() => {
     if (!sports?.length) {
-      return
+      return []
     }
 
     return sports.reduce<Sport[]>((newSports, sport) => {
       const { countries, ...rest } = sport
 
-      let gamesCount = 0
       const newSport: Sport = {
         ...rest,
         leagues: [],
       }
 
-      for (let countryIndex = 0; countryIndex < countries.length; countryIndex++) {
-        const country = countries[countryIndex]
+      for (const country of countries) {
         const { leagues } = country
 
-        if (isTopPage && gamesCount >= constants.topPageGamePerSportLimit) {
-          break
-        }
+        for (const league of leagues) {
+          const { games, ...leagueRest } = league
 
-        for (let leagueIndex = 0; leagueIndex < leagues.length; leagueIndex++) {
-          const league = leagues[leagueIndex]
-          const { games, ...rest } = league
-
-          if (isTopPage && gamesCount >= constants.topPageGamePerSportLimit) {
-            break
-          }
-
-          let leagueGames
-
-          if (isTopPage) {
-            const sliceEnd = constants.topPageGamePerSportLimit - gamesCount
-
-            leagueGames = games.slice(0, sliceEnd)
-            gamesCount += leagueGames.length
-          }
-          else {
-            leagueGames = games
-          }
+          // Apply the 4 games limit only when isTopPage is true
+          const selectedGames = isTopPage ? games.slice(0, 4) : games // Take the first 4 games if isTopPage is true
 
           newSport.leagues.push({
-            ...rest,
+            ...leagueRest,
             countrySlug: country.slug,
             countryName: country.name,
-            games: leagueGames,
+            games: selectedGames,
           })
         }
       }
@@ -94,7 +68,7 @@ const useSports = () => {
 
       return newSports
     }, [])
-  }, [ sports ])
+  }, [ sports, isTopPage ]) // Add isTopPage to dependencies
 
   return {
     sports: formattedSports,

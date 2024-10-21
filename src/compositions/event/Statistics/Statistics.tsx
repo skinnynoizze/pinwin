@@ -1,9 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts'
-import OddsChart from '../OddsChart' // Add this import
-
+import OddsChart from '../OddsChart'
+// Add this import
 
 type StatisticsProps = {
   gameId: string; // Add gameId prop
@@ -11,20 +11,51 @@ type StatisticsProps = {
   // Define other props here when needed
 };
 
-const radarData = [
-  { category: 'Form', home: 60, away: 40 },
-  { category: 'Attack', home: 43, away: 57 },
-  { category: 'Defense', home: 62, away: 38 },
-  { category: 'Poisson', home: 75, away: 25 },
-  { category: 'H2H', home: 29, away: 71 },
-  { category: 'Goals', home: 40, away: 60 },
-]
+const Statistics: React.FC<StatisticsProps> = ({ gameId, leagueName }) => {
+  const [ radarData, setRadarData ] = useState([]) // State for radar data
+  const [ totalData, setTotalData ] = useState([]) // State for total data
+  const [ error, setError ] = useState<string | null>(null) // State for error handling
 
-const totalData = [
-  { category: 'Total', home: 51.5, away: 48.5 },
-]
+  useEffect(() => {
+    const fetchStatisticsData = async () => {
+      try {
+        const response = await fetch('/api/statistics') // Fetch from the new API route
 
-export default function TeamComparisonPage({ gameId, leagueName }: StatisticsProps) { // Accept gameId and leagueName as props
+        if (!response.ok) {
+          throw new Error('Failed to fetch statistics data')
+        }
+        const data = await response.json()
+
+        // Filter data based on gameId and leagueName
+        const gameData = data.find((item: any) => item.gameId === gameId && item.leagueName === leagueName)
+
+        if (gameData) {
+          setRadarData(gameData.radarData)
+          setTotalData(gameData.totalData)
+        }
+        else {
+          // Check if the gameId is the specific one to show OddsChart
+          if (gameId === '1001000000001596805632') {
+            setError(null) // Clear error state
+          }
+          else {
+            setError('No data found for the specified gameId and leagueName')
+          }
+        }
+      }
+      catch (error) {
+        console.error('Error fetching statistics data:', error)
+        setError('Failed to load statistics data')
+      }
+    }
+
+    fetchStatisticsData()
+  }, [ gameId, leagueName ])
+
+  if (error && gameId !== '1001000000001596805632') {
+    return <p className="text-center text-red-500">{error}</p> // Display error message if not the specific gameId
+  }
+
   return (
     <div className="container mx-auto py-8 px-4">
       {/* Conditional rendering based on leagueName */}
@@ -130,3 +161,5 @@ export default function TeamComparisonPage({ gameId, leagueName }: StatisticsPro
     </div>
   )
 }
+
+export default Statistics

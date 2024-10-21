@@ -5,6 +5,6 @@ export default {
   },
   top: {
     en: 'Top Events',
-    es: 'Top Eventos',
+    es: 'Eventos Top',
   },
 }

@@ -9,6 +9,8 @@ import { Media } from 'components/layout'
 import TabbedBetslip from 'compositions/TabbedBetslip/TabbedBetslip'
 import ActivityFeed from 'compositions/ActivityFeed/ActivityFeed'
 import Controls from '../Controls/Controls'
+import { useLocale } from '../../../../../../contexts/LocaleContext/LocaleContext' // Correct import for useLocale
+import LocaleSwitcher from '../../../../../../components/LocaleSwitcher/LocaleSwitcher'
 
 
 interface RightSidebarProps {
@@ -18,6 +20,7 @@ interface RightSidebarProps {
 const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
   const { address } = useAccount()
   const [ isExpanded, setIsExpanded ] = useState(true)
+  const { changeLocale } = useLocale() // Get changeLocale from context
 
   useEffect(() => {
     onToggle(isExpanded)
@@ -28,7 +31,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
   }
 
   const desktopContent = (
-    <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'w-[316px]' : 'w-0'}`}>
+    <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'w-[326px]' : 'w-0'}`}>
       <div className="h-full relative">
         <button
           onClick={toggleSidebar}
@@ -52,6 +55,9 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
                 />
               )
             }
+            <div className="flex justify-end ml-2">
+              <LocaleSwitcher />
+            </div>
           </div>
           <div className="bg-bg-l1 border border-grey-10 border-l-0 rounded-r-md overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">
             <TabbedBetslip />

@@ -207,7 +207,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
         acc + country.leagues.reduce((leagueAcc, league) =>
           leagueAcc + (league.games?.length || 0), 0), 0)
 
-      return total + Math.min(sportGames, constants.topPageGamePerSportLimit)
+      return total + sportGames // Count all displayed games without limit
     }, 0)
   }, [ navigation ])
 
