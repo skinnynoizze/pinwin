@@ -148,8 +148,8 @@ const Notification = ({ user, game, sport, amount, odds, potentialPayout, select
         cn(
           'relative w-full cursor-pointer overflow-hidden rounded-lg p-2 mb-2',
           'transition-all duration-200 ease-in-out hover:shadow-md',
-          'bg-white dark:bg-gray-800',
-          'border border-gray-200 dark:border-gray-700'
+          'bg-gray-800',
+          'border border-gray-700'
         )
       }
     >
