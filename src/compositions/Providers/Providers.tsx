@@ -20,17 +20,18 @@ type Props = {
   initialState?: State
 }
 
-
 const Providers: React.CFC<Props> = (props) => {
   const { children, userAgent, initialState, initialChainId, initialLiveState } = props
 
   return (
     <DeviceProvider userAgent={userAgent}>
       <SvgProvider>
-        <LocaleProvider> {/* Wrap with LocaleProvider */}
-          <InnerProviders initialState={initialState} initialChainId={initialChainId} initialLiveState={initialLiveState}>
-            {children}
-          </InnerProviders>
+        <LocaleProvider>
+          <WagmiProvider initialState={initialState}>
+            <InnerProviders initialChainId={initialChainId} initialLiveState={initialLiveState}>
+              {children}
+            </InnerProviders>
+          </WagmiProvider>
         </LocaleProvider>
         <div className="sr-only">
           <SvgSprite />
@@ -41,21 +42,19 @@ const Providers: React.CFC<Props> = (props) => {
 }
 
 // Create a separate component to use the locale
-const InnerProviders: React.FC<{ initialState?: State; initialChainId: ChainId; initialLiveState: boolean; children: React.ReactNode }> = ({ initialState, initialChainId, initialLiveState, children }) => {
+const InnerProviders: React.FC<{ initialChainId: ChainId; initialLiveState: boolean; children: React.ReactNode }> = ({ initialChainId, initialLiveState, children }) => {
   const { locale } = useLocale() // Get the current locale from context
 
   return (
-    <IntlProvider key={locale} locale={locale} onError={(error) => console.error(error)}> {/* Use the locale from context */}
-      <WagmiProvider initialState={initialState}>
-        <AzuroSDKProvider initialChainId={initialChainId} affiliate={process.env.NEXT_PUBLIC_AFFILIATE_ADDRESS as Address} isBatchBetWithSameGameEnabled>
-          <LiveProvider initialLiveState={initialLiveState}>
-            <OddsViewProvider>
-              {children}
-            </OddsViewProvider>
-          </LiveProvider>
-          <NewFreeBetsChecker />
-        </AzuroSDKProvider>
-      </WagmiProvider>
+    <IntlProvider key={locale} locale={locale} onError={(error) => console.error(error)}>
+      <AzuroSDKProvider initialChainId={initialChainId} affiliate={process.env.NEXT_PUBLIC_AFFILIATE_ADDRESS as Address} isBatchBetWithSameGameEnabled>
+        <LiveProvider initialLiveState={initialLiveState}>
+          <OddsViewProvider>
+            {children}
+          </OddsViewProvider>
+        </LiveProvider>
+        <NewFreeBetsChecker />
+      </AzuroSDKProvider>
     </IntlProvider>
   )
 }
