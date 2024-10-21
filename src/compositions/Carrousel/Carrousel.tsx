@@ -25,14 +25,14 @@ const Carrousel: React.FC<CarrouselProps> = ({ isSidebarExpanded }) => {
       alt: '',
       title: 'Who Will Rule the Ice?',
       description: 'Glide into the prediction market and let your political picks soar!',
-      link: '/politics/international-tournaments/2024-presidential-election-usa/1001000000001596805632',
+      link: '/politics/international-tournaments/2024-presidential-election-usa/1001000000001596805632?tab=statistics',
     },
     {
       image: '/images/carrousel/2.png',
       alt: '',
-      title: 'Freeze Your Competition!',
-      description: 'Our odds are so good, they\'ll give you chills!',
-      link: '/football',
+      title: 'Contrast Stats, Freeze Your Strategy!',
+      description: 'Dive into team analytics and chill your opponents with data-driven decisions.',
+      link: '/football/spain/la-liga/1001000000001598742285?tab=statistics', // Update this to the correct path for your team stats page
     },
     {
       image: '/images/carrousel/1.png',
