@@ -5,10 +5,12 @@ import { type GameQuery } from '@azuro-org/toolkit'
 import { useParams, useSearchParams, useRouter } from 'next/navigation'
 import { Tab } from '@headlessui/react'
 import { useEffect, useState } from 'react'
+import { Message } from '@locmod/intl'
 
 import EventInfo, { EventInfoSkeleton } from 'compositions/event/EventInfo/EventInfo'
 import Markets, { MarketsSkeleton } from 'compositions/event/Markets/Markets'
 import Statistics from 'compositions/event/Statistics/Statistics'
+import messages from './messages'
 
 
 type ContentProps = {
@@ -65,7 +67,7 @@ const Content: React.FC<ContentProps> = ({ game, isGameInLive, leagueName }) => 
     }`
             }
           >
-            Markets
+            <Message value={messages.markets} />
           </Tab>
           <Tab
             className={
@@ -78,7 +80,7 @@ const Content: React.FC<ContentProps> = ({ game, isGameInLive, leagueName }) => 
     }`
             }
           >
-            Statistics
+            <Message value={messages.statistics} />
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-2">

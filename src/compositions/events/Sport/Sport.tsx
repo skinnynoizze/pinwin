@@ -7,7 +7,7 @@ import { Message } from '@locmod/intl'
 import Link from 'next/link'
 import { Icon, type IconName } from 'components/ui'
 import { Href } from 'components/navigation'
-import messages from './messages'
+import messages from '../../Navigation/messages' // Updated import path
 
 
 export const SportSkeleton: React.CFC = ({ children }) => {
@@ -32,16 +32,20 @@ type SportProps = {
 const Sport: React.CFC<SportProps> = ({ children, sport, isPage = false }) => {
   const { slug, name } = sport
 
+  const sportName = messages.sport[slug as keyof typeof messages.sport] || { en: name, es: name }
+
   return (
     <div className="ds:pt-2 nr:py-2 mb:py-1">
       <div className="flex items-center justify-between py-3 px-4">
         {
           isPage ? (
-            <Message className="text-heading-h4 font-semibold" value={{ ...messages.sport, values: { sportName: name } }} />
+            <Message className="text-heading-h4 font-semibold" value={sportName} />
           ) : (
             <div className="flex items-center">
               <Icon className="size-6 mr-3 text-brand-50" name={`sport/${slug}` as IconName} />
-              <Link href={`/${slug}`} className="text-heading-h4 font-semibold hover:text-brand-50">{name}</Link>
+              <Link href={`/${slug}`} className="text-heading-h4 font-semibold hover:text-brand-50">
+                <Message value={sportName} />
+              </Link>
             </div>
           )
         }

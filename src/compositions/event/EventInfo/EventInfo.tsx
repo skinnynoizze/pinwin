@@ -61,7 +61,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ game, status }) => {
 
   return (
     <div className="-mx-2">
-      <div className="flex items-center justify-center text-grey-60 text-caption-14 font-medium py-3 border-b border-b-grey-10">
+      <div className="flex items-center justify-center text-grey-60 text-caption-14 font-medium py-3 border-b border-b-grey-10 bg-gray-800 rounded-tl-md">
         <Icon className="size-4" name={`sport/${sportSlug}` as IconName} />
         <Flag className="mr-2 border border-grey-10 -ml-1" country={countrySlug} />
         <span>{countryName}</span>
