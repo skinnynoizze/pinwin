@@ -9,19 +9,8 @@ import messages from './messages'
 const textItems = [
   {
     text: messages.nav.docs,
-    link: constants.links.docs,
-  },
-  {
-    text: messages.nav.terms,
-    link: constants.links.terms,
-  },
-  {
-    text: messages.nav.policy,
-    link: constants.links.policy,
-  },
-  {
-    text: messages.nav.faq,
-    link: constants.links.faq,
+    link: 'https://pinwin-xyz.gitbook.io/pinwin.xyz-docs',
+    icon: 'simple-icons:gitbook',
   },
 ]
 
@@ -61,11 +50,12 @@ const Navbar: React.FC = () => {
             textItems.map((item, index) => (
               <a
                 key={`${item.link}-${index}`}
-                className="flex items-center"
+                className="flex items-center space-x-1"
                 href={item.link}
                 rel="noreferrer"
                 target="_blank"
               >
+                <Icon icon={item.icon} className="text-grey-60 text-lg" />
                 <Message value={item.text} className="font-medium text-grey-60 hover:text-grey-90 hover:underline" />
               </a>
             ))
