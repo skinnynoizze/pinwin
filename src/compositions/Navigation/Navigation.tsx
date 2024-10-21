@@ -117,6 +117,8 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
     )
   }, [ countries, slug ])
 
+  const sportName = isTop ? messages.top : messages.sport[slug as keyof typeof messages.sport] || name
+
   if (isTop) {
     return (
       <Href
@@ -158,7 +160,7 @@ const Sport: React.FC<SportProps> = ({ slug, name, countries, isExpanded, onTogg
         >
           <div className="flex items-center">
             <Icon className="size-4 mr-2" name={icon} />
-            <Message className="text-caption-13" value={name} />
+            <Message className="text-caption-13 text-ellipsis whitespace-nowrap overflow-hidden" value={sportName} />
           </div>
           {
             Boolean(isUnique || !leagues?.length) ? (
@@ -262,7 +264,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
         onToggle={() => setExpandedSport(null)}
       />
       {
-        Object.values(CATEGORIES).map(category => {
+        Object.entries(CATEGORIES).map(([ key, category ]) => {
           const sportsInCategory = sortedSports.filter(sport => sport.category === category)
 
           if (sportsInCategory.length === 0) {
@@ -270,8 +272,10 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
           }
 
           return (
-            <React.Fragment key={category}>
-              <h2 className="text-caption-13 font-semibold py-2 px-4">{category}</h2>
+            <React.Fragment key={key}>
+              <h2 className="text-caption-13 font-semibold py-2 px-4">
+                <Message value={messages.category[key as keyof typeof messages.category] || category} />
+              </h2>
               {
                 sportsInCategory.map(sport => (
                   <Sport
