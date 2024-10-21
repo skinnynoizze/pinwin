@@ -8,11 +8,12 @@ import { Icon } from 'components/ui' // Assuming you have an Icon component
 import useLatestBets from '../../hooks/useLatestBets' // Import your useLatestBets hook
 import shortenAddress from '../../helpers/shortenAddress'
 
-// Update the Item interface to match the Bet structure
+// Update the Item interface to include gameId
 interface Item {
   betId: string; // For tracking
   user: string; // You may need to derive this from the actor or another field
   game: {
+    gameId: string; // Add this line
     title: string;
     sport: {
       name: string;
@@ -63,6 +64,7 @@ const ActivityFeed = () => {
       betId: bet.betId,
       user: bet.actor, // Assuming actor is the user
       game: {
+        gameId: bet.selections[0]?.outcome.condition.game.gameId || 'unknown-game-id', // Add this line
         title: bet.selections[0]?.outcome.condition.game.title || 'Unknown Game',
         sport: {
           name: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport',
@@ -130,9 +132,9 @@ const ActivityFeed = () => {
 
 const Notification = ({ user, game, sport, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
   const sportUrl = sport?.toLowerCase().replace(/\s+/g, '-') || 'unknown-sport'
+  const countryUrl = game?.league?.country?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-country'
   const leagueUrl = game?.league?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-league'
-  const gameId = game?.title?.toLowerCase().replace(/\s+/g, '-') || 'unknown-game'
-  const gameUrl = `/${sportUrl}/${leagueUrl}/${gameId}`
+  const gameUrl = `/${sportUrl}/${countryUrl}/${leagueUrl}/${game.gameId}` // Use gameId here instead of title
 
   const shortenedUser = shortenAddress(user)
 

@@ -23,6 +23,7 @@ const GET_LATEST_BETS = gql`
           condition {
             conditionId
             game {
+              gameId
               title
               sport {
                 name
@@ -47,6 +48,7 @@ type BetOutcome = {
   condition: {
     conditionId: string;
     game: {
+      gameId: string; // Added gameId
       title: string;
       sport: {
         name: string;
