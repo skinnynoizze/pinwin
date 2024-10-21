@@ -81,7 +81,7 @@ const ActivityFeed = () => {
       selection: bet.selections[0]?.outcome.outcomeId || 'Unknown Selection', // Derive selection from selections
       timestamp: new Date(Number(bet.createdBlockTimestamp) * 1000).toLocaleString(), // Convert timestamp
       icon: sportIcons[bet.selections[0]?.outcome.condition.game.sport.name] || '🏅', // Use the sport name to get the icon, default to a medal
-      color: '#00C9A7', // You can customize this based on the bet type or status
+      color: '', // You can customize this based on the bet type or status
     })).reverse() // Reverse the order here
   }, [ bets ])
 
@@ -99,9 +99,6 @@ const ActivityFeed = () => {
         cn(
           'relative flex flex-col overflow-hidden bg-background md:shadow-xl',
           'relative mx-auto w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl mb-4',
-          'transition-all duration-200 ease-in-out hover:shadow-lg',
-          'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
-          'transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
           isCollapsed ? 'h-16' : 'h-auto'
         )
       }
