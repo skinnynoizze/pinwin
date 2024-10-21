@@ -131,8 +131,8 @@ const ActivityFeed = () => {
   )
 }
 
-const Notification = ({ user, game, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
-  const sportUrl = game?.sport?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-sport'
+const Notification = ({ user, game, sport, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
+  const sportUrl = sport?.toLowerCase().replace(/\s+/g, '-') || 'unknown-sport'
   const leagueUrl = game?.league?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-league'
   const gameId = game?.title?.toLowerCase().replace(/\s+/g, '-') || 'unknown-game'
   const gameUrl = `/${sportUrl}/${leagueUrl}/${gameId}`
@@ -167,7 +167,7 @@ const Notification = ({ user, game, amount, odds, potentialPayout, selection, ti
             <span className="text-xs text-gray-500">{timestamp}</span>
           </div>
           <p className="text-xs text-gray-600 dark:text-gray-300 truncate">
-            {game?.title || 'Unknown Game'} ({game?.sport?.name || 'Unknown Sport'})
+            {game?.title || 'Unknown Game'} ({sport || 'Unknown Sport'})
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400">
             ${amount} @ {formattedOdds} | Payout: ${formattedPayout}
