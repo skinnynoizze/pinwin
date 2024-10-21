@@ -107,7 +107,7 @@ const ActivityFeed = () => {
       }
     >
       <div className="flex justify-between items-center p-4">
-        <h2 className="text-lg font-semibold">Activity Feed</h2>
+        <h2 className="text-lg font-semibold">Recent Bets</h2>
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="focus:outline-none"
