@@ -85,9 +85,9 @@ type Bet = {
 
 // Update the hook to accept the client as a second parameter
 const useLatestBets = (first: number, client: any) => {
-  const { loading, error, data } = useQuery(GET_LATEST_BETS, {
+  const { loading, error, data, refetch } = useQuery(GET_LATEST_BETS, {
     variables: { first },
-    client, // Use the passed client
+    client,
   })
 
   const bets: Bet[] = data?.bets || []
@@ -96,6 +96,7 @@ const useLatestBets = (first: number, client: any) => {
     bets,
     loading,
     error,
+    refetch,
   }
 }
 

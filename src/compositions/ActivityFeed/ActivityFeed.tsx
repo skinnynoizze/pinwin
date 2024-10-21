@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useApolloClients } from '@azuro-org/sdk' // Import useApolloClients
 import { cn } from '@/lib/utils'
 import { AnimatedList } from '@/components/ui/animated-list'
@@ -12,7 +12,18 @@ import shortenAddress from '../../helpers/shortenAddress'
 interface Item {
   betId: string; // For tracking
   user: string; // You may need to derive this from the actor or another field
-  game: string; // You may need to derive this from the selections or another field
+  game: {
+    title: string;
+    sport: {
+      name: string;
+    };
+    league: {
+      name: string;
+      country: {
+        name: string;
+      };
+    };
+  };
   sport: string; // You may need to derive this from the selections or another field
   amount: string; // Amount of the bet
   odds: string; // Odds of the bet
@@ -42,6 +53,36 @@ const ActivityFeed = () => {
   const { prematchClient } = useApolloClients() // Get the prematch client
   const { bets, loading, error } = useLatestBets(5, prematchClient) // Fetch the latest 5 bets
 
+  // Transform the fetched bets into the notifications format and reverse the order
+  const notifications: Item[] = useMemo(() => {
+    if (!bets) {
+      return []
+    }
+
+    return bets.map(bet => ({
+      betId: bet.betId,
+      user: bet.actor, // Assuming actor is the user
+      game: {
+        title: bet.selections[0]?.outcome.condition.game.title || 'Unknown Game',
+        sport: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport',
+        league: {
+          name: bet.selections[0]?.outcome.condition.game.league.name || 'Unknown League',
+          country: {
+            name: bet.selections[0]?.outcome.condition.game.league.country.name || 'Unknown Country',
+          },
+        },
+      },
+      sport: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport',
+      amount: bet.amount,
+      odds: bet.odds,
+      potentialPayout: bet.potentialPayout,
+      selection: bet.selections[0]?.outcome.outcomeId || 'Unknown Selection', // Derive selection from selections
+      timestamp: new Date(Number(bet.createdBlockTimestamp) * 1000).toLocaleString(), // Convert timestamp
+      icon: sportIcons[bet.selections[0]?.outcome.condition.game.sport.name] || '🏅', // Use the sport name to get the icon, default to a medal
+      color: '#00C9A7', // You can customize this based on the bet type or status
+    })).reverse() // Reverse the order here
+  }, [ bets ])
+
   if (loading) {
     return <div>Loading...</div>
   }
@@ -49,21 +90,6 @@ const ActivityFeed = () => {
   if (error) {
     return <div>Error: {error.message}</div>
   }
-
-  // Transform the fetched bets into the notifications format
-  const notifications: Item[] = bets.map(bet => ({
-    betId: bet.betId,
-    user: bet.actor, // Assuming actor is the user
-    game: bet.selections[0]?.outcome.condition.game.title || 'Unknown Game', // Derive game title from selections
-    sport: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport', // Derive sport name from selections
-    amount: bet.amount,
-    odds: bet.odds,
-    potentialPayout: bet.potentialPayout,
-    selection: bet.selections[0]?.outcome.outcomeId || 'Unknown Selection', // Derive selection from selections
-    timestamp: new Date(Number(bet.createdBlockTimestamp) * 1000).toLocaleString(), // Convert timestamp
-    icon: sportIcons[bet.selections[0]?.outcome.condition.game.sport.name] || '🏅', // Use the sport name to get the icon, default to a medal
-    color: '#00C9A7', // You can customize this based on the bet type or status
-  }))
 
   return (
     <div
@@ -94,7 +120,7 @@ const ActivityFeed = () => {
         <AnimatedList>
           {
             notifications.map((item, idx) => (
-              <Notification {...item} key={idx} />
+              <Notification {...item} key={item.betId || idx} />
             ))
           }
         </AnimatedList>
@@ -103,9 +129,17 @@ const ActivityFeed = () => {
   )
 }
 
-const Notification = ({ user, game, sport, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
-  const gameUrl = `/games/${game.replace(/\s+/g, '-').toLowerCase()}`
+const Notification = ({ user, game, amount, odds, potentialPayout, selection, timestamp, icon, color }: Item) => {
+  const sportUrl = game?.sport?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-sport'
+  const leagueUrl = game?.league?.name?.toLowerCase().replace(/\s+/g, '-') || 'unknown-league'
+  const gameId = game?.title?.toLowerCase().replace(/\s+/g, '-') || 'unknown-game'
+  const gameUrl = `/${sportUrl}/${leagueUrl}/${gameId}`
+
   const shortenedUser = shortenAddress(user)
+
+  // Format odds and potentialPayout to 2 decimal places
+  const formattedOdds = parseFloat(odds || '0').toFixed(2)
+  const formattedPayout = parseFloat(potentialPayout || '0').toFixed(2)
 
   return (
     <figure
@@ -131,10 +165,10 @@ const Notification = ({ user, game, sport, amount, odds, potentialPayout, select
             <span className="text-xs text-gray-500">{timestamp}</span>
           </div>
           <p className="text-xs text-gray-600 dark:text-gray-300 truncate">
-            {selection} on {game} ({sport})
+            {game?.title || 'Unknown Game'} ({game?.sport?.name || 'Unknown Sport'})
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            ${amount} @ {odds} | Payout: ${potentialPayout}
+            ${amount} @ {formattedOdds} | Payout: ${formattedPayout}
           </p>
         </div>
       </a>

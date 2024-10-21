@@ -18,7 +18,7 @@ export default {
     },
     ESPORTS: {
       en: 'E-Sports',
-      es: 'Deportes Electrónicos',
+      es: 'E-Sports',
     },
   },
   sport: {
