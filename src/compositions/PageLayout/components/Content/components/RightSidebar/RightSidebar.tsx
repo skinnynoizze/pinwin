@@ -6,11 +6,11 @@ import { useAccount } from 'wagmi'
 import { Button, buttonMessages } from 'components/inputs'
 import { Icon } from 'components/ui'
 import { Media } from 'components/layout'
+import LocaleSwitcherMobile from '@/src/components/LocaleSwitcher/LocaleSwitcherMobile'
 import TabbedBetslip from 'compositions/TabbedBetslip/TabbedBetslip'
 import ActivityFeed from 'compositions/ActivityFeed/ActivityFeed'
 import Controls from '../Controls/Controls'
 import { useLocale } from '../../../../../../contexts/LocaleContext/LocaleContext' // Correct import for useLocale
-import LocaleSwitcher from '../../../../../../components/LocaleSwitcher/LocaleSwitcher'
 
 
 interface RightSidebarProps {
@@ -56,7 +56,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({ onToggle }) => {
               )
             }
             <div className="flex justify-end ml-2">
-              <LocaleSwitcher />
+              <LocaleSwitcherMobile />
             </div>
           </div>
           <div className="bg-bg-l1 border border-grey-10 border-l-0 rounded-r-md overflow-auto wd:h-[calc(100vh_-_4.5rem)] no-scrollbar px-2 pt-1">

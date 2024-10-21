@@ -53,7 +53,7 @@ const ActivityFeed = () => {
   const { prematchClient } = useApolloClients() // Get the prematch client
   const { bets, loading, error } = useLatestBets(5, prematchClient) // Fetch the latest 5 bets
 
-  // Transform the fetched bets into the notifications format and reverse the order
+  // Update the transformation of bets to notifications
   const notifications: Item[] = useMemo(() => {
     if (!bets) {
       return []
@@ -64,7 +64,9 @@ const ActivityFeed = () => {
       user: bet.actor, // Assuming actor is the user
       game: {
         title: bet.selections[0]?.outcome.condition.game.title || 'Unknown Game',
-        sport: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport',
+        sport: {
+          name: bet.selections[0]?.outcome.condition.game.sport.name || 'Unknown Sport',
+        },
         league: {
           name: bet.selections[0]?.outcome.condition.game.league.name || 'Unknown League',
           country: {

@@ -64,24 +64,26 @@ const LocaleSwitcherMobile: React.FC<LocaleSwitcherMobileProps> = ({
             <button
               className={
                 cx(
-                  'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left',
+                  'flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full',
                   { 'bg-gray-100': locale === 'en' }
                 )
               }
               onClick={() => handleLocaleChange('en')}
             >
-            English
+              <Icon icon="emojione:flag-for-united-states" className="mr-2" />
+              <span>English</span>
             </button>
             <button
               className={
                 cx(
-                  'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left',
+                  'flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full',
                   { 'bg-gray-100': locale === 'es' }
                 )
               }
               onClick={() => handleLocaleChange('es')}
             >
-            Español
+              <Icon icon="emojione:flag-for-spain" className="mr-2" />
+              <span>Español</span>
             </button>
           </div>
         )
