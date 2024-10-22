@@ -1,5 +1,6 @@
 ## PINWIN.xyz
 PinWin.xyz is the coolest betting platform for sports, politics, e-sports and more. We offer the best odds, live updates, and exclusive promotions.
+Powered by Azuro SDK & Smart Contracts and the open and transparent nature of blockchains like Polygon.
 
 ## Azuro Hackaton
 Template for working example app:
