@@ -31,13 +31,6 @@ https://github.com/Azuro-protocol/example-app
 - Show the best outcomes to engage users looking for maximun return profit (also riskier bets)
 - Show live wins: Show the best winners of the day or last days to show people how much you can win
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-}
-
-## License
-[This license](/LICENSE.md) applies to all code contained in this repository.
-
 ## Run project
 
 First, install dependencies:
