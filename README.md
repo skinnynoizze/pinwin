@@ -31,7 +31,7 @@ https://github.com/Azuro-protocol/example-app
 - Easy buy USDT (+ POL for gas) using credit card, Paypal, Apple Pay, Google Pay, and other payment methods.
 - Easy bridge & swap from any chain to our supported chains using a 3rd party bridge.
 - Filter by Countrys, Sports, Leagues, etc.
-- Sports API for fetchin info about matches: resultados ultimos encuentros, posicion en la tabla, lesionades o bajas de cada equipo.
+- Sports API for fetchin info about matches: las 5 head 2 head matches, table position, etc.
 - Show the best outcomes to engage users looking for maximun return profit (also riskier bets)
 - Show live wins: Show the best winners of the day or last days to show people how much you can win
 
