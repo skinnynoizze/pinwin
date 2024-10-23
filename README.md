@@ -1,5 +1,7 @@
 ## PINWIN.xyz
 https://pinwin.xyz
+
+Docs:
 https://pinwin-xyz.gitbook.io/pinwin.xyz-docs
 
 PinWin.xyz is the coolest betting platform for sports, politics, e-sports and more. We offer the best odds, live updates, and exclusive promotions.
